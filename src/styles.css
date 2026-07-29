@@ -183,3 +183,40 @@
   background-clip: text;
   color: transparent;
 }
+
+@keyframes spotlight-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes particle-drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(var(--tx, 12px), var(--ty, -16px));
+  }
+}
+
+@keyframes particle-twinkle {
+  0%,
+  100% {
+    opacity: var(--base-opacity, 0.5);
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+@theme {
+  --animate-spotlight-pulse: spotlight-pulse 8s ease-in-out infinite;
+  --animate-particle-drift: particle-drift 16s ease-in-out infinite alternate;
+  --animate-particle-twinkle: particle-twinkle 8s ease-in-out infinite alternate;
+}
