@@ -235,9 +235,10 @@ function Index() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(60% 45% at 50% 8%, oklch(0.85 0.06 250/0.20), transparent 70%)," +
-              "radial-gradient(45% 40% at 8% 12%, oklch(0.7 0.09 250/0.16), transparent 70%)," +
-              "radial-gradient(45% 40% at 95% 20%, oklch(0.7 0.08 265/0.14), transparent 70%)",
+              "radial-gradient(60% 45% at 50% 8%, oklch(0.75 0.10 290/0.22), transparent 70%)," +
+              "radial-gradient(45% 40% at 8% 12%, oklch(0.65 0.12 290/0.16), transparent 70%)," +
+              "radial-gradient(45% 40% at 95% 20%, oklch(0.65 0.11 285/0.14), transparent 70%)," +
+              "radial-gradient(35% 30% at 72% 8%, oklch(0.7 0.14 305/0.12), transparent 70%)",
           }}
         />
         {/* Center spotlight behind headline */}
@@ -246,7 +247,7 @@ function Index() {
           className="pointer-events-none absolute left-1/2 top-[38%] h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[90px]"
           style={{
             background:
-              "radial-gradient(closest-side, oklch(0.9 0.02 250/0.14), transparent 100%)",
+              "radial-gradient(closest-side, oklch(0.85 0.06 290/0.16), transparent 100%)",
           }}
         />
         {/* Vignette */}
