@@ -4,6 +4,7 @@ import {
   Bell,
   Check,
   Globe,
+  Info,
   LineChart,
   Lock,
   Puzzle,
@@ -20,6 +21,7 @@ import {
 } from "@/components/ui/accordion";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { HeroFloaters } from "@/components/site/HeroFloaters";
 import { Eyebrow, Section, SectionHeading, Stat } from "@/components/site/primitives";
 import heroGlow from "@/assets/hero-glow.jpg";
 import dashboard from "@/assets/dashboard.jpg";
@@ -188,46 +190,61 @@ function Index() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pb-24 pt-36 sm:pt-44">
+      <section className="relative overflow-hidden pb-20 pt-36 sm:pt-44">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "radial-gradient(oklch(0.5 0 0) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+            maskImage: "radial-gradient(80% 70% at 50% 40%, black, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(80% 70% at 50% 40%, black, transparent 80%)",
+          }}
+        />
         <img
           src={heroGlow}
           alt=""
           aria-hidden="true"
           width={1920}
           height={1080}
-          className="pointer-events-none absolute left-1/2 top-0 h-[80vh] w-[130%] -translate-x-[62%] -translate-y-[38%] object-cover opacity-50"
+          className="pointer-events-none absolute left-1/2 top-0 h-[80vh] w-[130%] -translate-x-[62%] -translate-y-[38%] object-cover opacity-40"
         />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[70vh] glow-top" />
+        <HeroFloaters />
         <div className="relative mx-auto w-full max-w-6xl px-5 text-center">
-          <Eyebrow>Announcing Suprema 2.0</Eyebrow>
-          <h1 className="mx-auto mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-gradient sm:text-6xl md:text-7xl">
+          <a
+            href="#features"
+            className="mx-auto flex w-fit items-center gap-2.5 rounded-full border border-border/80 bg-[oklch(0.2_0_0/0.9)] py-2 pl-3 pr-4 text-sm font-medium backdrop-blur-md"
+          >
+            <span className="block size-4 rounded-full bg-foreground/85 shadow-[inset_-4px_-2px_0_0_var(--surface-2)]" />
+            Manage projects end-to-end
+            <ArrowRight className="size-4 text-muted-foreground" />
+          </a>
+          <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-7xl md:text-[5.2rem]">
             Plan and navigate from idea to launch.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Suprema keeps roadmaps, tasks and progress in one calm dark workspace, so your
-            team always knows what ships next.
+          <p className="mx-auto mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Create a clear roadmap, track progress, and smoothly guide your project from idea
+            to successful launch.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-9 flex flex-col items-center gap-4">
             <a
               href="#pricing"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              className="inline-flex items-center rounded-2xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Start free trial <ArrowRight className="size-4" />
+              Get Started For Free
             </a>
-            <a
-              href="#features"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-            >
-              See how it works
-            </a>
+            <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+              <Info className="size-4" /> No credit card required
+            </p>
           </div>
 
-          <p className="mt-16 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Trusted by fast-moving product teams
+          <p className="mt-24 text-sm text-muted-foreground">
+            Trusted by 50,000+ businesses for innovative design and growth.
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-60">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 opacity-45">
             {brands.map((b) => (
-              <span key={b} className="text-sm font-medium tracking-tight">
+              <span key={b} className="text-xl font-semibold tracking-tight">
                 {b}
               </span>
             ))}
