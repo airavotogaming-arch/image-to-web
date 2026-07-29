@@ -210,6 +210,54 @@ function Index() {
           height={1080}
           className="pointer-events-none absolute left-1/2 top-0 h-[80vh] w-[130%] -translate-x-[62%] -translate-y-[38%] object-cover opacity-40"
         />
+        {/* Starfield */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{
+            backgroundImage:
+              "radial-gradient(1.4px 1.4px at 12% 18%, oklch(0.98 0 0/0.9), transparent 60%)," +
+              "radial-gradient(1.2px 1.2px at 27% 9%, oklch(0.98 0 0/0.7), transparent 60%)," +
+              "radial-gradient(1.6px 1.6px at 42% 26%, oklch(0.98 0 0/0.55), transparent 60%)," +
+              "radial-gradient(1.2px 1.2px at 61% 12%, oklch(0.98 0 0/0.8), transparent 60%)," +
+              "radial-gradient(1.5px 1.5px at 78% 22%, oklch(0.98 0 0/0.6), transparent 60%)," +
+              "radial-gradient(1.2px 1.2px at 90% 8%, oklch(0.98 0 0/0.75), transparent 60%)," +
+              "radial-gradient(1.3px 1.3px at 7% 44%, oklch(0.98 0 0/0.5), transparent 60%)," +
+              "radial-gradient(1.2px 1.2px at 34% 58%, oklch(0.98 0 0/0.45), transparent 60%)," +
+              "radial-gradient(1.5px 1.5px at 69% 49%, oklch(0.98 0 0/0.5), transparent 60%)," +
+              "radial-gradient(1.3px 1.3px at 95% 55%, oklch(0.98 0 0/0.55), transparent 60%)",
+            maskImage: "linear-gradient(to bottom, black, transparent 85%)",
+          }}
+        />
+        {/* Ambient light washes */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(60% 45% at 50% 8%, oklch(0.85 0.06 250/0.20), transparent 70%)," +
+              "radial-gradient(45% 40% at 8% 12%, oklch(0.7 0.09 250/0.16), transparent 70%)," +
+              "radial-gradient(45% 40% at 95% 20%, oklch(0.7 0.08 265/0.14), transparent 70%)",
+          }}
+        />
+        {/* Center spotlight behind headline */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-[38%] h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[90px]"
+          style={{
+            background:
+              "radial-gradient(closest-side, oklch(0.9 0.02 250/0.14), transparent 100%)",
+          }}
+        />
+        {/* Vignette */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(90% 70% at 50% 45%, transparent 40%, oklch(0.06 0 0/0.85) 100%)",
+          }}
+        />
         <HeroFloaters />
         <div className="relative mx-auto w-full max-w-6xl px-5 text-center">
           <a
