@@ -1,21 +1,27 @@
-import { Sparkles } from "lucide-react";
-
-const links = ["Home", "Features", "Pricing", "Blog", "Contact"];
+const links = ["Home", "Blogs", "Changelog", "Waitlist"];
 
 export function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-4 z-50 px-4">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-border/80 bg-surface/80 px-3 py-2 backdrop-blur-xl">
-        <a href="#" className="flex items-center gap-2 pl-2 text-sm font-semibold tracking-tight">
-          <Sparkles className="size-4 text-foreground/80" />
-          Suprema
+    <header className="fixed inset-x-0 top-5 z-50 px-4">
+      <nav className="mx-auto flex max-w-4xl items-center justify-between rounded-3xl border border-border/70 bg-[oklch(0.11_0_0/0.85)] p-2.5 pl-3 backdrop-blur-xl">
+        <a href="#" className="flex items-center gap-3">
+          <span className="flex size-9 items-center justify-center rounded-xl border border-border bg-surface-2">
+            <span className="block size-4 rounded-full bg-foreground/85 shadow-[inset_-4px_-2px_0_0_var(--surface-2)]" />
+          </span>
+          <span className="text-lg font-semibold tracking-tight">
+            Suprema<sup className="ml-0.5 text-[9px] font-medium text-muted-foreground">UI</sup>
+          </span>
         </a>
         <ul className="hidden items-center gap-1 md:flex">
-          {links.map((l) => (
+          {links.map((l, i) => (
             <li key={l}>
               <a
                 href={`#${l.toLowerCase()}`}
-                className="rounded-full px-3 py-1.5 text-[13px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                className={`rounded-xl px-4 py-2 text-sm transition-colors ${
+                  i === 0
+                    ? "bg-surface-2 font-medium text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {l}
               </a>
@@ -24,9 +30,9 @@ export function Navbar() {
         </ul>
         <a
           href="#pricing"
-          className="rounded-full bg-primary px-4 py-2 text-[13px] font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          className="rounded-2xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
         >
-          Get Started
+          Contact us
         </a>
       </nav>
     </header>
