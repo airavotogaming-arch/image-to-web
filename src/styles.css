@@ -61,6 +61,12 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme {
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
   --radius: 0.75rem;
   --background: oklch(0.14 0 0);
@@ -156,5 +162,24 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
   }
+}
+
+@utility glow-top {
+  background-image: var(--gradient-glow);
+}
+
+@utility panel {
+  background-image: var(--gradient-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+}
+
+@utility text-gradient {
+  background: linear-gradient(180deg, oklch(1 0 0), oklch(0.72 0 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
