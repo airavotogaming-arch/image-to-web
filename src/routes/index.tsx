@@ -245,12 +245,16 @@ function Index() {
         {/* Center spotlight behind headline */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-[38%] h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[90px]"
-          style={{
-            background:
-              "radial-gradient(closest-side, oklch(0.85 0.06 290/0.16), transparent 100%)",
-          }}
-        />
+          className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2"
+        >
+          <div
+            className="h-[520px] w-[900px] animate-spotlight-pulse rounded-full blur-[90px]"
+            style={{
+              background:
+                "radial-gradient(closest-side, oklch(0.85 0.06 290/0.16), transparent 100%)",
+            }}
+          />
+        </div>
         {/* Vignette */}
         <div
           aria-hidden="true"
@@ -260,6 +264,7 @@ function Index() {
               "radial-gradient(90% 70% at 50% 45%, transparent 40%, oklch(0.06 0 0/0.85) 100%)",
           }}
         />
+        <HeroLights />
         <HeroFloaters />
         <div className="relative mx-auto w-full max-w-6xl px-5 text-center">
           <a
