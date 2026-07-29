@@ -195,7 +195,7 @@ function Index() {
           aria-hidden="true"
           width={1920}
           height={1080}
-          className="pointer-events-none absolute inset-x-0 top-0 h-[70vh] w-full object-cover opacity-40"
+          className="pointer-events-none absolute left-1/2 top-0 h-[80vh] w-[130%] -translate-x-[62%] -translate-y-[38%] object-cover opacity-50"
         />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[70vh] glow-top" />
         <div className="relative mx-auto w-full max-w-6xl px-5 text-center">
