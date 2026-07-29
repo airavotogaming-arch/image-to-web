@@ -4,6 +4,7 @@ import {
   Bell,
   Check,
   Globe,
+  Info,
   LineChart,
   Lock,
   Puzzle,
