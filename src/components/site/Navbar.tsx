@@ -4,7 +4,7 @@ const links = [
   { label: "Home", to: "/" as const },
   { label: "Features", to: "/features" as const },
   { label: "Download", to: "/download" as const },
-  { label: "FAQ", to: "/#faq" as const },
+  { label: "FAQ", to: "/faq" as const },
 ];
 
 export function Navbar() {
@@ -23,20 +23,7 @@ export function Navbar() {
         </Link>
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => {
-            const active = l.to === pathname || (l.to !== "/" && pathname.startsWith(l.to.split("#")[0]));
-            // hash-only links use <a> so browser scrolls
-            if (l.to.startsWith("/#")) {
-              return (
-                <li key={l.label}>
-                  <a
-                    href={l.to}
-                    className="rounded-xl px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              );
-            }
+            const active = l.to === "/" ? pathname === "/" : pathname.startsWith(l.to);
             return (
               <li key={l.label}>
                 <Link

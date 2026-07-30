@@ -7,8 +7,8 @@ const cols = [
     items: [
       { label: "Features", to: "/features" },
       { label: "Download", to: "/download" },
-      { label: "Changelog", to: "#" },
-      { label: "Roadmap", to: "#" },
+      { label: "Changelog", to: "/changelog" },
+      { label: "Roadmap", to: "/roadmap" },
     ],
   },
   {
@@ -23,22 +23,41 @@ const cols = [
   {
     title: "Resources",
     items: [
-      { label: "Docs", to: "#" },
+      { label: "FAQ", to: "/faq" },
       { label: "Setup guide", to: "/download" },
-      { label: "Support", to: "#" },
-      { label: "GitHub", to: "#" },
+      { label: "Changelog", to: "/changelog" },
+      { label: "Roadmap", to: "/roadmap" },
     ],
   },
   {
     title: "Legal",
     items: [
-      { label: "Privacy", to: "#" },
-      { label: "Terms", to: "#" },
-      { label: "Security", to: "#" },
-      { label: "License", to: "#" },
+      { label: "Privacy", to: "/privacy" },
+      { label: "Terms", to: "/terms" },
+      { label: "Security", to: "/privacy#security" },
+      { label: "License", to: "/terms#license" },
     ],
   },
 ];
+
+function FooterLink({ label, to }: { label: string; to: string }) {
+  // hash-only fragments use <a> so browser handles scroll
+  if (to.includes("#") && !to.startsWith("/features")) {
+    return (
+      <a href={to} className="text-sm text-foreground/80 hover:text-foreground">
+        {label}
+      </a>
+    );
+  }
+  return (
+    <Link
+      to={to as "/features" | "/download" | "/" | "/faq" | "/changelog" | "/roadmap" | "/privacy" | "/terms"}
+      className="text-sm text-foreground/80 hover:text-foreground"
+    >
+      {label}
+    </Link>
+  );
+}
 
 export function Footer() {
   return (
@@ -74,18 +93,7 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {c.items.map((item) => (
                   <li key={item.label}>
-                    {item.to.startsWith("/") && !item.to.includes("#") ? (
-                      <Link
-                        to={item.to as "/features" | "/download" | "/"}
-                        className="text-sm text-foreground/80 hover:text-foreground"
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <a href={item.to} className="text-sm text-foreground/80 hover:text-foreground">
-                        {item.label}
-                      </a>
-                    )}
+                    <FooterLink label={item.label} to={item.to} />
                   </li>
                 ))}
               </ul>
