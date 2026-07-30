@@ -7,11 +7,33 @@ import { posts, categoryColors } from "@/lib/blog-posts";
 export const Route = createFileRoute("/blog_/$slug")({
   head: ({ params }) => {
     const post = posts.find((p) => p.slug === params.slug);
+    if (!post) {
+      return {
+        meta: [{ title: "Post not found" }, { name: "description", content: "" }],
+      };
+    }
+    const title = `${post.title} — Airavoto Blog`;
+    const url = `https://airavoto.com/blog/${post.slug}`;
     return {
       meta: [
-        { title: post ? `${post.title} — Airavoto Blog` : "Post not found" },
-        { name: "description", content: post?.excerpt ?? "" },
+        { title },
+        { name: "description", content: post.excerpt },
+        // Open Graph — controls how the post looks when shared on WhatsApp, Facebook, LinkedIn, etc.
+        { property: "og:type", content: "article" },
+        { property: "og:title", content: post.title },
+        { property: "og:description", content: post.excerpt },
+        { property: "og:image", content: post.img },
+        { property: "og:url", content: url },
+        { property: "og:site_name", content: "Airavoto Gaming POS" },
+        { property: "article:published_time", content: new Date(post.date).toISOString() },
+        { property: "article:section", content: post.category },
+        // Twitter/X card
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: post.title },
+        { name: "twitter:description", content: post.excerpt },
+        { name: "twitter:image", content: post.img },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   loader: ({ params }) => {
