@@ -1,10 +1,43 @@
+import { Link } from "@tanstack/react-router";
 import { Sparkles } from "lucide-react";
 
 const cols = [
-  { title: "Product", items: ["Features", "Download", "Changelog", "Roadmap"] },
-  { title: "Modules", items: ["Sessions", "Bookings", "Food & Inventory", "Expenses"] },
-  { title: "Resources", items: ["Docs", "Setup guide", "Support", "Status"] },
-  { title: "Legal", items: ["Privacy", "Terms", "Security", "License"] },
+  {
+    title: "Product",
+    items: [
+      { label: "Features", to: "/features" },
+      { label: "Download", to: "/download" },
+      { label: "Changelog", to: "#" },
+      { label: "Roadmap", to: "#" },
+    ],
+  },
+  {
+    title: "Modules",
+    items: [
+      { label: "Sessions", to: "/features#sessions" },
+      { label: "Bookings", to: "/features#bookings" },
+      { label: "Food & Inventory", to: "/features#food" },
+      { label: "Expenses", to: "/features#expenses" },
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      { label: "Docs", to: "#" },
+      { label: "Setup guide", to: "/download" },
+      { label: "Support", to: "#" },
+      { label: "GitHub", to: "#" },
+    ],
+  },
+  {
+    title: "Legal",
+    items: [
+      { label: "Privacy", to: "#" },
+      { label: "Terms", to: "#" },
+      { label: "Security", to: "#" },
+      { label: "License", to: "#" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -39,11 +72,20 @@ export function Footer() {
                 {c.title}
               </h3>
               <ul className="mt-4 space-y-2.5">
-                {c.items.map((i) => (
-                  <li key={i}>
-                    <a href="#" className="text-sm text-foreground/80 hover:text-foreground">
-                      {i}
-                    </a>
+                {c.items.map((item) => (
+                  <li key={item.label}>
+                    {item.to.startsWith("/") && !item.to.includes("#") ? (
+                      <Link
+                        to={item.to as "/features" | "/download" | "/"}
+                        className="text-sm text-foreground/80 hover:text-foreground"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <a href={item.to} className="text-sm text-foreground/80 hover:text-foreground">
+                        {item.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
