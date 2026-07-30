@@ -1,4 +1,9 @@
-const links = ["Home", "Blogs", "Changelog", "Waitlist"];
+const links = [
+  { label: "Home", href: "#" },
+  { label: "Features", href: "#features" },
+  { label: "Tech", href: "#tech" },
+  { label: "FAQ", href: "#faq" },
+];
 
 export function Navbar() {
   return (
@@ -9,30 +14,30 @@ export function Navbar() {
             <span className="block size-4 rounded-full bg-foreground/85 shadow-[inset_-4px_-2px_0_0_var(--surface-2)]" />
           </span>
           <span className="text-lg font-semibold tracking-tight">
-            Suprema<sup className="ml-0.5 text-[9px] font-medium text-muted-foreground">UI</sup>
+            Airavoto<sup className="ml-0.5 text-[9px] font-medium text-muted-foreground">POS</sup>
           </span>
         </a>
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l, i) => (
-            <li key={l}>
+            <li key={l.label}>
               <a
-                href={`#${l.toLowerCase()}`}
+                href={l.href}
                 className={`rounded-xl px-4 py-2 text-sm transition-colors ${
                   i === 0
                     ? "bg-surface-2 font-medium text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {l}
+                {l.label}
               </a>
             </li>
           ))}
         </ul>
         <a
-          href="#pricing"
+          href="#download"
           className="rounded-2xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
         >
-          Contact us
+          Download Free
         </a>
       </nav>
     </header>

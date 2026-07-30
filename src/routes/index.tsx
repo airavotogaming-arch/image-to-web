@@ -1,16 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
-  Bell,
   Check,
-  Globe,
-  Info,
+  Download,
+  Gamepad2,
   LineChart,
   Lock,
-  Puzzle,
+  Package,
+  RefreshCw,
+  ShieldCheck,
   Star,
-  Users,
-  Workflow,
+  Timer,
+  Utensils,
+  Wallet,
   Zap,
 } from "lucide-react";
 import {
@@ -25,22 +27,22 @@ import { HeroFloaters } from "@/components/site/HeroFloaters";
 import { HeroLights } from "@/components/site/HeroLights";
 import { Eyebrow, Section, SectionHeading, Stat } from "@/components/site/primitives";
 import heroGlow from "@/assets/hero-glow.jpg";
-import dashboard from "@/assets/dashboard.jpg";
+import posShot from "@/assets/airavoto-pos.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Suprema — Plan and Navigate From Idea to Launch" },
+      { title: "Airavoto Gaming POS — Free Gaming Center Software" },
       {
         name: "description",
         content:
-          "Suprema is the dark, focused planning workspace where teams map roadmaps, track progress and ship launches faster.",
+          "Download Airavoto Gaming POS free — complete gaming center management with live session tracking, bookings, food, inventory and finance. No hidden charges.",
       },
-      { property: "og:title", content: "Suprema — Plan and Navigate From Idea to Launch" },
+      { property: "og:title", content: "Airavoto Gaming POS — Free Gaming Center Software" },
       {
         property: "og:description",
         content:
-          "Roadmaps, real-time collaboration and progress analytics in one calm workspace built for teams who ship.",
+          "All-in-one POS for PC, PS5, VR and simulator centers. Sessions, bookings, food, inventory and reports — free, complete, no hidden charges.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -49,139 +51,156 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const brands = ["Linkfy", "Cloudex", "Nexora", "Pulsar", "Orbit", "Vertex"];
+const brands = ["PC", "PS5", "Xbox", "VR", "Simulators", "Snooker"];
 
 const glanceCards = [
   {
-    icon: Workflow,
-    title: "Smart Task Management",
-    body: "Break big launches into ordered, owned steps with automatic dependencies and clear next actions.",
+    icon: Timer,
+    title: "Real-time Session Management",
+    body: "Track sessions across PC, consoles, VR and simulators with visual and audio countdown timers, auto status updates and pause/resume.",
   },
   {
-    icon: LineChart,
-    title: "Live Progress Tracking",
-    body: "Every milestone reports itself, so status meetings turn into a glance at one honest bar.",
+    icon: Gamepad2,
+    title: "Streamlined Booking Management",
+    body: "Walk-ins and advance reservations with conflict detection, instant seat allocation, bulk party bookings and full customer history.",
   },
   {
-    icon: Bell,
-    title: "Priority Alerts",
-    body: "Get pinged only when something actually blocks the launch — never for routine noise.",
+    icon: Utensils,
+    title: "Integrated Food & Inventory",
+    body: "Item catalog, orders attached to bookings, real-time quantity tracking, configurable pricing and F&B revenue analytics.",
   },
   {
-    icon: Puzzle,
-    title: "Plug Into Your Stack",
-    body: "Connect the tools your team already lives in and keep a single source of truth.",
+    icon: Wallet,
+    title: "Comprehensive Financials",
+    body: "Expense categorisation, monthly and quarterly summaries, revenue tracking and CSV/PDF export for easy accounting.",
   },
 ];
 
 const potential = [
   {
     icon: Zap,
-    title: "Instant Workflows",
-    body: "Spin up a launch plan from a template in seconds instead of an afternoon.",
+    title: "Streamlined Operations",
+    body: "One centralised panel for every activity in the center, cutting manual effort to a minimum.",
   },
   {
-    icon: Users,
-    title: "Seamless Collaboration",
-    body: "Comments, mentions and shared docs sit next to the work, not in another tab.",
+    icon: RefreshCw,
+    title: "Live Data Sync",
+    body: "Seat availability, timers and orders stay current across every screen in the venue.",
   },
   {
     icon: Lock,
     title: "Enterprise Security",
-    body: "SOC 2 controls, SSO and granular permissions protect every roadmap you own.",
+    body: "Role-based access control, bcrypt password hashing and secure sessions protect your data.",
   },
   {
-    icon: Globe,
-    title: "Global Timezones",
-    body: "Schedules adapt to each teammate, so handoffs happen while you sleep.",
+    icon: LineChart,
+    title: "Data-Driven Decisions",
+    body: "Actionable analytics and reports across occupancy, revenue, F&B and expenses.",
   },
   {
-    icon: Star,
-    title: "Built to Scale",
-    body: "From a two-person sprint to a thousand-seat rollout with the same clean surface.",
+    icon: Package,
+    title: "Future-Proof Scalability",
+    body: "Flexible device and pricing configurations that grow with new seats, rooms and formats.",
   },
 ];
 
 const plans = [
   {
-    name: "Starter",
-    price: "$0",
-    note: "Free forever for small teams",
-    features: ["Up to 3 projects", "Basic task board", "2 GB file storage", "Community support"],
-    featured: false,
-  },
-  {
-    name: "Pro",
-    price: "$24",
-    note: "Per user / month, billed yearly",
+    name: "Free Download",
+    price: "₹0",
+    note: "Complete software — no hidden charges",
     features: [
-      "Unlimited projects",
-      "Timeline & roadmap views",
-      "Progress analytics",
-      "Priority support",
-      "Advanced integrations",
+      "All modules unlocked",
+      "Unlimited seats & devices",
+      "Sessions, bookings, food, inventory",
+      "Expenses, reports & loyalty",
+      "Free lifetime updates",
     ],
     featured: true,
+  },
+  {
+    name: "Self-Hosted",
+    price: "₹0",
+    note: "Run it on your own PC or server",
+    features: [
+      "Your data stays with you",
+      "PostgreSQL database included",
+      "Offline-friendly local setup",
+      "Community support",
+    ],
+    featured: false,
   },
 ];
 
 const posts = [
-  { tag: "Product", title: "How we rebuilt roadmap planning around momentum", date: "Mar 14, 2026" },
-  { tag: "Teams", title: "The quiet cost of status meetings (and the fix)", date: "Mar 02, 2026" },
-  { tag: "Guides", title: "A launch checklist that survives contact with reality", date: "Feb 18, 2026" },
+  { tag: "Frontend", title: "React 18 + TypeScript, Vite, TanStack Query, Tailwind & shadcn/ui", date: "Type-safe UI" },
+  { tag: "Backend", title: "Express + TypeScript, Drizzle ORM, Bcrypt, RESTful API", date: "Scalable API" },
+  { tag: "Database", title: "PostgreSQL via Neon with a 16-table operations schema", date: "Reliable storage" },
 ];
 
-const team = [
-  { name: "Ava Mercer", role: "Founder & CEO" },
-  { name: "Daniel Roth", role: "Head of Product" },
-  { name: "Sofia Lang", role: "Design Lead" },
-  { name: "Ken Osei", role: "Engineering" },
+const schema = [
+  "Bookings",
+  "Booking History",
+  "Users",
+  "Device Configs",
+  "Pricing Configs",
+  "Food Items",
+  "Expenses",
+  "Activity Logs",
+  "Loyalty Members",
+  "Loyalty Events",
+  "Loyalty Config",
+  "Game Updates",
+  "Center Info",
+  "Gallery Images",
+  "Facilities",
+  "Games",
 ];
 
 const testimonials = [
   {
     quote:
-      "We replaced three tools with Suprema and our launch cycle dropped from nine weeks to five.",
-    name: "Marta Klein",
-    role: "VP Operations, Cloudex",
+      "Timers, billing and food orders finally live in one screen. Our counter queue disappeared.",
+    name: "Rahul Menon",
+    role: "Owner, LevelUp Gaming Arena",
   },
   {
     quote:
-      "The progress view is the first dashboard my team actually trusts. Nothing hides in it.",
-    name: "Ryan Patel",
-    role: "Product Lead, Nexora",
+      "Seat occupancy and expiry alerts are accurate to the second — no more disputed sessions.",
+    name: "Sneha Kapoor",
+    role: "Manager, Nexus Esports Cafe",
   },
   {
-    quote: "Onboarding took an afternoon. By Friday the whole roadmap lived in one place.",
-    name: "Lena Fischer",
-    role: "COO, Pulsar",
+    quote: "Completely free and it does more than the paid POS we were using before.",
+    name: "Arjun Nair",
+    role: "Founder, Respawn Gaming Zone",
   },
 ];
 
 const faqs = [
   {
+    q: "Is Airavoto Gaming POS really free?",
+    a: "Yes. The complete software is free to download with every module unlocked — no trial period, no hidden charges and no locked features.",
+  },
+  {
+    q: "Which devices can it manage?",
+    a: "PC, PS5 and other consoles, VR rigs, racing simulators and any custom seat type you configure in device settings.",
+  },
+  {
     q: "How long does setup take?",
-    a: "Most teams import their existing projects and are running the same day — no implementation call required.",
-  },
-  {
-    q: "Can I change plans later?",
-    a: "Yes. Upgrade, downgrade or cancel at any time from billing, and we prorate the difference automatically.",
-  },
-  {
-    q: "Do you offer a free trial?",
-    a: "Every paid plan starts with a 7-day trial with full access. No credit card needed to begin.",
+    a: "Most centers download, configure their seats and pricing, and start billing sessions the same day.",
   },
   {
     q: "Is my data secure?",
-    a: "Data is encrypted in transit and at rest, with SSO, audit logs and role-based permissions on Pro.",
+    a: "Role-based access control, bcrypt password hashing, secure express sessions and full activity logs protect every record.",
   },
   {
-    q: "Does Suprema work for remote teams?",
-    a: "It is built for them. Timezone-aware scheduling and async updates keep distributed teams aligned.",
+    q: "Can I run it on my own machine?",
+    a: "Yes. Self-host it on your counter PC or a server with PostgreSQL — your data never has to leave the venue.",
   },
   {
-    q: "Can I integrate my own tools?",
-    a: "Connect Slack, GitHub, Figma, Notion and more, or build your own workflow with the open API.",
+    q: "Do I get updates?",
+    a: "Free lifetime updates. New features, fixes and modules arrive at no extra cost.",
   },
 ];
 
@@ -272,30 +291,30 @@ function Index() {
             className="mx-auto flex w-fit items-center gap-2.5 rounded-full border border-border/80 bg-[oklch(0.2_0_0/0.9)] py-2 pl-3 pr-4 text-sm font-medium backdrop-blur-md"
           >
             <span className="block size-4 rounded-full bg-foreground/85 shadow-[inset_-4px_-2px_0_0_var(--surface-2)]" />
-            Manage projects end-to-end
+            Complete gaming center management
             <ArrowRight className="size-4 text-muted-foreground" />
           </a>
           <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-7xl md:text-[5.2rem]">
-            Plan and navigate from idea to launch.
+            Airavoto Gaming POS — free, complete, no hidden charges.
           </h1>
           <p className="mx-auto mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Create a clear roadmap, track progress, and smoothly guide your project from idea
-            to successful launch.
+            Run every seat, session, booking, order and expense in your gaming center from one
+            fast dashboard. Download the full software free.
           </p>
           <div className="mt-9 flex flex-col items-center gap-4">
             <a
-              href="#pricing"
-              className="inline-flex items-center rounded-2xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              href="#download"
+              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Get Started For Free
+              <Download className="size-5" /> Download Free
             </a>
             <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <Info className="size-4" /> No credit card required
+              <ShieldCheck className="size-4" /> No payment, no hidden charges
             </p>
           </div>
 
           <p className="mt-24 text-sm text-muted-foreground">
-            Trusted by 50,000+ businesses for innovative design and growth.
+            Built for every seat type in a modern gaming center.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 opacity-45">
             {brands.map((b) => (
@@ -311,16 +330,16 @@ function Index() {
       <Section id="features">
         <SectionHeading
           eyebrow="Overview"
-          title="Suprema at a Glance"
-          subtitle="Everything a launch needs — planning, ownership and progress — held together in one surface."
+          title="Your whole gaming center, one panel"
+          subtitle="Seat occupancy, walk-ins, timers, food orders, payments and reports — live in a single admin dashboard."
         />
         <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-surface p-2 shadow-[var(--shadow-soft)]">
           <img
-            src={dashboard}
-            alt="Suprema project workspace showing tasks, owners, priorities and progress"
+            src={posShot.url}
+            alt="Airavoto Gaming POS seat management dashboard showing PS5 and PC occupancy, walk-in list and booking table"
             loading="lazy"
-            width={1600}
-            height={1008}
+            width={1366}
+            height={768}
             className="w-full rounded-xl"
           />
         </div>
@@ -338,9 +357,9 @@ function Index() {
       {/* Potential */}
       <Section>
         <SectionHeading
-          eyebrow="Capabilities"
-          title="Unlock Your Team's Potential"
-          subtitle="Fewer tools, less status chasing, and a plan that stays honest as the work moves."
+          eyebrow="Why Airavoto"
+          title="Why choose Airavoto Gaming POS"
+          subtitle="Transform your center into a highly efficient, profitable operation with one integrated system."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {potential.slice(0, 3).map(({ icon: Icon, title, body }) => (
@@ -361,18 +380,18 @@ function Index() {
           ))}
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          <Stat value="76%" label="Less time spent in status updates each week" />
-          <Stat value="12M+" label="Tasks planned and shipped through Suprema" />
-          <Stat value="600+" label="Product teams running launches with us" />
+          <Stat value="16" label="Database tables covering every operation" />
+          <Stat value="100%" label="Free — every module unlocked forever" />
+          <Stat value="24/7" label="Live session tracking and status boards" />
         </div>
       </Section>
 
       {/* Pricing */}
-      <Section id="pricing">
+      <Section id="download">
         <SectionHeading
-          eyebrow="Pricing"
-          title="Affordable Pricing Plans"
-          subtitle="Start free, upgrade when your roadmap outgrows it. No hidden seats, no surprise fees."
+          eyebrow="Download"
+          title="Free forever. No hidden charges."
+          subtitle="Download the complete Airavoto Gaming POS software — every feature unlocked, no trial, no seat limits."
         />
         <div className="mx-auto mt-12 grid max-w-3xl gap-4 md:grid-cols-2">
           {plans.map((p) => (
@@ -406,13 +425,13 @@ function Index() {
                     : "border border-border bg-surface-2 text-foreground"
                 }`}
               >
-                Get started
+                Download now
               </a>
             </div>
           ))}
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground">
-          {["Free updates", "Cancel anytime", "24/7 support", "Secure payments"].map((i) => (
+          {["Free lifetime updates", "No subscription", "No hidden charges", "All features unlocked"].map((i) => (
             <span key={i} className="inline-flex items-center gap-2">
               <Check className="size-3.5" /> {i}
             </span>
@@ -425,35 +444,35 @@ function Index() {
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
             <h2 className="max-w-md text-3xl font-semibold tracking-tight text-gradient sm:text-4xl">
-              Monitor progress faster than ever.
+              Monitor every seat in real time.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Real-time reporting rolls every task up into a single view of where the launch
-              actually stands — no spreadsheets, no chasing.
+              Occupancy, time left and revenue roll up into one honest view of the floor — no
+              registers, no spreadsheets, no guesswork.
             </p>
             <div className="mt-8 grid max-w-sm grid-cols-2 gap-6">
               <div>
                 <div className="text-3xl font-semibold tracking-tight">100%</div>
-                <p className="mt-1 text-xs text-muted-foreground">Visibility across every team</p>
+                <p className="mt-1 text-xs text-muted-foreground">Visibility across every seat</p>
               </div>
               <div>
                 <div className="text-3xl font-semibold tracking-tight">10X</div>
-                <p className="mt-1 text-xs text-muted-foreground">Faster weekly reporting</p>
+                <p className="mt-1 text-xs text-muted-foreground">Faster daily closing</p>
               </div>
             </div>
             <a
-              href="#pricing"
+              href="#download"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
             >
-              Get started <ArrowRight className="size-4" />
+              Download free <ArrowRight className="size-4" />
             </a>
           </div>
           <div className="panel p-6">
             {[
-              { label: "Discovery", value: 100 },
-              { label: "Design system", value: 82 },
-              { label: "Implementation", value: 64 },
-              { label: "QA & launch", value: 28 },
+              { label: "PC seats occupied", value: 100 },
+              { label: "PS5 seats occupied", value: 82 },
+              { label: "VR & simulators", value: 64 },
+              { label: "Food orders fulfilled", value: 28 },
             ].map((row) => (
               <div key={row.label} className="border-b border-border/60 py-4 last:border-0">
                 <div className="flex items-center justify-between text-sm">
@@ -473,8 +492,12 @@ function Index() {
       </Section>
 
       {/* Blog */}
-      <Section id="blog">
-        <SectionHeading eyebrow="Blog" title="News, insights and more" />
+      <Section id="tech">
+        <SectionHeading
+          eyebrow="Technology"
+          title="Built with a modern, reliable stack"
+          subtitle="Full-stack TypeScript for dependable, type-safe operations at any scale."
+        />
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {posts.map((p) => (
             <article key={p.title} className="panel flex flex-col p-6">
@@ -490,15 +513,15 @@ function Index() {
 
       {/* Team */}
       <Section>
-        <SectionHeading eyebrow="Team" title="Our Team Members" />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((m) => (
-            <div key={m.name} className="panel overflow-hidden">
-              <div className="h-44 w-full bg-[radial-gradient(120%_100%_at_50%_0%,var(--surface-2),var(--background))]" />
-              <div className="p-5">
-                <h3 className="text-sm font-medium tracking-tight">{m.name}</h3>
-                <p className="mt-1 text-xs text-muted-foreground">{m.role}</p>
-              </div>
+        <SectionHeading
+          eyebrow="Schema"
+          title="A 16-table operations schema"
+          subtitle="Every aspect of gaming center operations modelled for data integrity and flexibility."
+        />
+        <div className="mt-12 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {schema.map((t) => (
+            <div key={t} className="panel px-5 py-4 text-sm text-foreground/85">
+              {t}
             </div>
           ))}
         </div>
@@ -507,20 +530,20 @@ function Index() {
       {/* Worldwide */}
       <Section>
         <SectionHeading
-          eyebrow="Global"
-          title="Connecting Worldwide Teams"
-          subtitle="From two-person studios to distributed enterprises across 40+ countries."
+          eyebrow="Results"
+          title="Built for busy gaming floors"
+          subtitle="From a 10-seat cafe to a multi-room esports arena, on the same clean surface."
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          <Stat value="100%" label="Cloud-native and available anywhere" />
-          <Stat value="50%" label="Faster handoffs between timezones" />
-          <Stat value="90%" label="Of teams renew after their first launch" />
+          <Stat value="0%" label="Hidden charges, ever" />
+          <Stat value="50%" label="Less time spent at the billing counter" />
+          <Stat value="99%" label="Accuracy on session timing and billing" />
         </div>
       </Section>
 
       {/* Testimonials */}
       <Section>
-        <SectionHeading eyebrow="Testimonials" title="What Our Users Say" />
+        <SectionHeading eyebrow="Testimonials" title="What Gaming Centers Say" />
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {testimonials.map((t) => (
             <figure key={t.name} className="panel flex flex-col p-6">
@@ -541,7 +564,7 @@ function Index() {
       </Section>
 
       {/* FAQ */}
-      <Section id="contact">
+      <Section id="faq">
         <SectionHeading eyebrow="FAQ" title="Frequently Asked Questions" />
         <div className="mx-auto mt-12 grid max-w-4xl gap-x-6 md:grid-cols-2">
           {[faqs.slice(0, 3), faqs.slice(3)].map((group, gi) => (
@@ -572,22 +595,23 @@ function Index() {
           <div className="relative">
             <Eyebrow>Get Started</Eyebrow>
             <h2 className="mx-auto mt-5 max-w-xl text-3xl font-semibold tracking-tight text-gradient sm:text-5xl">
-              Start your 7-day free trial
+              Download Airavoto Gaming POS free
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-              Bring your next launch into Suprema today. No credit card, no setup calls.
+              The complete gaming center management system. No payment, no trial limits, no
+              hidden charges.
             </p>
             <a
-              href="#"
+              href="#download"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground"
             >
-              Get started <ArrowRight className="size-4" />
+              <Download className="size-4" /> Download free
             </a>
             <div className="mt-14 grid gap-4 sm:grid-cols-4">
-              <Stat value="76%" label="Faster planning cycles" />
-              <Stat value="12M+" label="Tasks completed" />
-              <Stat value="600+" label="Teams onboard" />
-              <Stat value="20+" label="Native integrations" />
+              <Stat value="₹0" label="Total cost" />
+              <Stat value="16" label="Operational modules" />
+              <Stat value="4+" label="Device types supported" />
+              <Stat value="∞" label="Seats and bookings" />
             </div>
           </div>
         </div>

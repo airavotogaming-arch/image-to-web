@@ -1,10 +1,10 @@
 import { Sparkles } from "lucide-react";
 
 const cols = [
-  { title: "Product", items: ["Features", "Pricing", "Integrations", "Changelog"] },
-  { title: "Company", items: ["About", "Careers", "Blog", "Contact"] },
-  { title: "Resources", items: ["Docs", "Guides", "Support", "Status"] },
-  { title: "Legal", items: ["Privacy", "Terms", "Security", "Cookies"] },
+  { title: "Product", items: ["Features", "Download", "Changelog", "Roadmap"] },
+  { title: "Modules", items: ["Sessions", "Bookings", "Food & Inventory", "Expenses"] },
+  { title: "Resources", items: ["Docs", "Setup guide", "Support", "Status"] },
+  { title: "Legal", items: ["Privacy", "Terms", "Security", "License"] },
 ];
 
 export function Footer() {
@@ -14,15 +14,16 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2 text-sm font-semibold">
             <Sparkles className="size-4" />
-            Suprema
+            Airavoto Gaming POS
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            The planning workspace that takes teams from first idea to shipped launch.
+            The complete gaming center management system — sessions, bookings, food,
+            inventory and finances. Free to download, no hidden charges.
           </p>
           <div className="mt-6 flex max-w-sm items-center gap-2 rounded-full border border-border bg-surface p-1.5">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Get release updates"
               aria-label="Email address"
               className="w-full bg-transparent px-3 text-sm text-foreground outline-none placeholder:text-muted-foreground"
             />
@@ -51,8 +52,8 @@ export function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-12 flex w-full max-w-6xl flex-col gap-2 border-t border-border/60 px-5 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Suprema. All rights reserved.</p>
-        <p>Designed for teams who ship.</p>
+        <p>© {new Date().getFullYear()} Airavoto Gaming POS. All rights reserved.</p>
+        <p>100% free — no hidden charges.</p>
       </div>
     </footer>
   );
