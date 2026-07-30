@@ -1,28 +1,4 @@
-import { Layers, ListTodo, Zap } from "lucide-react";
-
-function Gauge({ value }: { value: number }) {
-  const ticks = 40;
-  return (
-    <div className="relative size-24">
-      {Array.from({ length: ticks }).map((_, i) => {
-        const on = i / ticks <= value / 100;
-        return (
-          <span
-            key={i}
-            className={`absolute left-1/2 top-1/2 h-[3px] w-2.5 origin-[-34px_50%] rounded-full ${
-              on ? "bg-[oklch(0.72_0.16_150)]" : "bg-foreground/12"
-            }`}
-            style={{ transform: `rotate(${135 + (i / (ticks - 1)) * 270}deg) translateX(34px)` }}
-          />
-        );
-      })}
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-lg font-semibold">{value}%</span>
-        <span className="text-[8px] text-muted-foreground">Productivity</span>
-      </div>
-    </div>
-  );
-}
+import { Clock, Gamepad2, ShoppingBag, Timer, TrendingUp, Users } from "lucide-react";
 
 function Card({
   className,
@@ -43,6 +19,12 @@ function Card({
   );
 }
 
+const sessions = [
+  { seat: "PC-1", customer: "Arjun", time: "1:24 left", status: "Active" },
+  { seat: "PS5-2", customer: "Sneha", time: "0:47 left", status: "Expiring" },
+  { seat: "PC-4", customer: "Rahul", time: "2:10 left", status: "Active" },
+];
+
 export function HeroFloaters() {
   return (
     <div
@@ -57,126 +39,174 @@ export function HeroFloaters() {
         WebkitMaskComposite: "source-in",
       }}
     >
-      {/* left top */}
+      {/* left top — active session */}
       <Card
         className="left-[4%] top-[8%] w-64 opacity-70"
         style={{ transform: "perspective(1200px) rotateY(14deg) rotateZ(-3deg)" }}
       >
         <div className="flex items-center gap-2 text-xs font-medium">
-          <ListTodo className="size-3.5 text-[oklch(0.72_0.14_20)]" /> Keyboard-first design
+          <Timer className="size-3.5 text-[oklch(0.72_0.16_150)]" /> Live Session
         </div>
-        <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
-          Shortcuts for everything — no mouse required.
-        </p>
-        <div className="mt-4 flex gap-2">
-          <span className="rounded-md border border-border bg-surface-2 px-2 py-1 text-[10px]">⌘</span>
-          <span className="rounded-md border border-border bg-surface-2 px-2 py-1 text-[10px]">K</span>
+        <div className="mt-3 flex items-center justify-between rounded-lg bg-surface-2 px-3 py-2">
+          <div>
+            <div className="text-sm font-semibold">PC-3</div>
+            <div className="text-[10px] text-muted-foreground">Vikram · Walk-in</div>
+          </div>
+          <div className="text-right">
+            <div className="text-sm font-mono font-semibold text-[oklch(0.72_0.16_150)]">48:12</div>
+            <div className="text-[10px] text-muted-foreground">remaining</div>
+          </div>
+        </div>
+        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-surface-2">
+          <div className="h-full w-[62%] rounded-full bg-[oklch(0.72_0.16_150)]" />
         </div>
       </Card>
 
-      {/* left middle task list */}
+      {/* left middle — walk-in queue */}
       <Card
         className="left-[-2%] top-[36%] w-72 opacity-60"
         style={{ transform: "perspective(1200px) rotateY(16deg) rotateZ(-2deg)" }}
       >
-        <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-          <span>Unsubscribe flow</span>
-          <span>•••</span>
+        <div className="flex items-center justify-between text-[11px]">
+          <span className="flex items-center gap-1.5 font-medium">
+            <Users className="size-3" /> Walk-in Queue
+          </span>
+          <span className="rounded-full bg-[oklch(0.55_0.18_20/0.25)] px-2 py-0.5 text-[10px] text-[oklch(0.78_0.15_20)]">
+            4 waiting
+          </span>
         </div>
-        {["In Progress · 7 days ago", "Bug · Feature", "Review · 3 days ago"].map((r) => (
+        {[
+          { name: "Anjali S.", seats: "2 × PC", wait: "2 min" },
+          { name: "Rohan K.", seats: "1 × PS5", wait: "5 min" },
+          { name: "Party of 4", seats: "4 × PC", wait: "8 min" },
+        ].map((r) => (
           <div
-            key={r}
-            className="mt-3 flex items-center gap-2 border-t border-border/60 pt-3 text-[11px] text-foreground/70"
+            key={r.name}
+            className="mt-3 flex items-center justify-between border-t border-border/60 pt-3 text-[11px]"
           >
-            <span className="size-1.5 rounded-full bg-foreground/50" />
-            {r}
+            <div>
+              <div className="font-medium text-foreground/85">{r.name}</div>
+              <div className="text-muted-foreground">{r.seats}</div>
+            </div>
+            <span className="text-muted-foreground">{r.wait}</span>
           </div>
         ))}
-        <div className="mt-4 h-8 rounded-lg bg-surface-2" />
       </Card>
 
-      {/* left bottom gauges */}
+      {/* left bottom — revenue summary */}
       <Card
-        className="bottom-[2%] left-[2%] w-80 opacity-55"
+        className="bottom-[2%] left-[2%] w-72 opacity-55"
         style={{ transform: "perspective(1200px) rotateY(14deg) rotateZ(-6deg)" }}
       >
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium">Productivity Reports</span>
+          <span className="flex items-center gap-1.5 text-sm font-medium">
+            <TrendingUp className="size-3.5 text-[oklch(0.72_0.16_150)]" /> Today's Revenue
+          </span>
           <span className="rounded-md border border-border px-2 py-1 text-[10px] text-muted-foreground">
-            View
+            Live
           </span>
         </div>
-        <div className="mt-4 flex justify-around">
-          <Gauge value={80} />
-          <Gauge value={65} />
+        <div className="mt-4 text-3xl font-bold tracking-tight">₹4,820</div>
+        <div className="mt-1 text-[10px] text-muted-foreground">↑ 18% vs yesterday</div>
+        <div className="mt-4 grid grid-cols-3 gap-2 text-center text-[10px]">
+          {[
+            { label: "Sessions", val: "₹3,200" },
+            { label: "Food", val: "₹980" },
+            { label: "Other", val: "₹640" },
+          ].map((s) => (
+            <div key={s.label} className="rounded-lg bg-surface-2 px-2 py-2">
+              <div className="font-semibold text-foreground/90">{s.val}</div>
+              <div className="text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
         </div>
       </Card>
 
-      {/* right top workspace nav */}
+      {/* right top — seat occupancy */}
       <Card
         className="right-[3%] top-[6%] w-56 opacity-70"
         style={{ transform: "perspective(1200px) rotateY(-14deg) rotateZ(3deg)" }}
       >
         <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
-          <Layers className="size-3.5" /> My Workspace
+          <Gamepad2 className="size-3.5" /> Seat Occupancy
         </div>
-        <div className="mt-3 space-y-1.5 text-[11px]">
-          <div className="rounded-md bg-surface-2 px-2 py-1.5 text-foreground">Issues</div>
-          <div className="px-2 py-1 pl-5 text-muted-foreground">Active</div>
-          <div className="px-2 py-1 pl-5 text-muted-foreground">Backlog</div>
-          <div className="px-2 py-1 text-foreground/80">Projects</div>
-          <div className="px-2 py-1 text-foreground/80">Views</div>
+        <div className="mt-3 space-y-2.5">
+          {[
+            { label: "PC", filled: 8, total: 10 },
+            { label: "PS5", filled: 4, total: 5 },
+            { label: "VR", filled: 2, total: 3 },
+          ].map((s) => (
+            <div key={s.label}>
+              <div className="flex justify-between text-[11px]">
+                <span className="text-foreground/80">{s.label}</span>
+                <span className="text-muted-foreground">
+                  {s.filled}/{s.total}
+                </span>
+              </div>
+              <div className="mt-1 flex gap-0.5">
+                {Array.from({ length: s.total }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-1.5 flex-1 rounded-full ${i < s.filled ? "bg-[oklch(0.72_0.16_150)]" : "bg-surface-2"}`}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </Card>
 
-      {/* right middle */}
+      {/* right middle — session timers */}
       <Card
         className="right-[2%] top-[40%] w-64 opacity-65"
         style={{ transform: "perspective(1200px) rotateY(-16deg) rotateZ(6deg)" }}
       >
-        <div className="flex size-9 items-center justify-center rounded-full border border-border bg-surface-2">
-          <Zap className="size-4 text-foreground/70" />
+        <div className="flex items-center gap-2 text-xs font-medium">
+          <Clock className="size-3.5 text-[oklch(0.7_0.18_280)]" /> Active Sessions
         </div>
-        <div className="mt-4 flex items-center gap-2 text-xs font-medium">
-          <Zap className="size-3.5 text-[oklch(0.7_0.18_20)]" /> Instantly fast
+        <div className="mt-3 space-y-2">
+          {sessions.map((s) => (
+            <div key={s.seat} className="flex items-center justify-between rounded-lg bg-surface-2 px-3 py-2 text-[11px]">
+              <div>
+                <span className="font-semibold text-foreground/90">{s.seat}</span>
+                <span className="ml-1.5 text-muted-foreground">{s.customer}</span>
+              </div>
+              <span
+                className={`font-mono font-medium ${s.status === "Expiring" ? "text-[oklch(0.72_0.16_20)]" : "text-[oklch(0.72_0.16_150)]"}`}
+              >
+                {s.time}
+              </span>
+            </div>
+          ))}
         </div>
-        <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
-          Designed in pursuit of high-speed performance.
-        </p>
       </Card>
 
-      {/* right bottom chart */}
+      {/* right bottom — food orders */}
       <Card
-        className="bottom-[3%] right-[1%] w-80 opacity-55"
+        className="bottom-[3%] right-[1%] w-72 opacity-55"
         style={{ transform: "perspective(1200px) rotateY(-12deg) rotateZ(4deg)" }}
       >
         <div className="flex items-center gap-2 text-xs font-medium">
-          Productivity Reports
-          <span className="rounded-md bg-[oklch(0.35_0.1_150)] px-1.5 py-0.5 text-[9px] text-[oklch(0.85_0.15_150)]">
-            New
+          <ShoppingBag className="size-3.5 text-[oklch(0.72_0.18_50)]" /> Food Orders
+          <span className="ml-auto rounded-md bg-[oklch(0.35_0.1_150)] px-1.5 py-0.5 text-[9px] text-[oklch(0.85_0.15_150)]">
+            3 pending
           </span>
         </div>
-        <p className="mt-1 text-[10px] text-muted-foreground">Weekly output across the team.</p>
-        <svg viewBox="0 0 260 90" className="mt-3 w-full">
-          {[0, 1, 2, 3].map((i) => (
-            <line
-              key={i}
-              x1="0"
-              x2="260"
-              y1={i * 28 + 2}
-              y2={i * 28 + 2}
-              stroke="currentColor"
-              className="text-border"
-              strokeWidth="0.5"
-            />
+        <div className="mt-3 space-y-2 text-[11px]">
+          {[
+            { item: "Chicken Burger ×2", seat: "PC-1", price: "₹280" },
+            { item: "Red Bull ×1", seat: "PS5-3", price: "₹120" },
+            { item: "Nachos ×1", seat: "PC-7", price: "₹90" },
+          ].map((o) => (
+            <div key={o.item} className="flex items-center justify-between border-t border-border/60 pt-2">
+              <div>
+                <div className="font-medium text-foreground/85">{o.item}</div>
+                <div className="text-muted-foreground">{o.seat}</div>
+              </div>
+              <span className="text-foreground/80">{o.price}</span>
+            </div>
           ))}
-          <polyline
-            fill="none"
-            stroke="oklch(0.75 0.17 150)"
-            strokeWidth="1.5"
-            points="0,70 26,52 52,26 78,44 104,78 130,58 156,50 182,14 208,40 234,30 260,20"
-          />
-        </svg>
+        </div>
       </Card>
     </div>
   );
