@@ -102,7 +102,7 @@ const posts = [
     category: "Business",
     date: "Apr 2, 2025",
     readTime: "3 min",
-    img: "https://images.unsplash.com/photo-1615213612138-4d1195b1c0e8?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&q=80",
   },
 ];
 
