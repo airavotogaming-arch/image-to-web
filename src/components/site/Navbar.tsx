@@ -14,8 +14,8 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-5 z-50 px-4">
       <nav className="mx-auto flex max-w-4xl items-center justify-between rounded-3xl border border-border/70 bg-[oklch(0.11_0_0/0.85)] p-2.5 pl-3 backdrop-blur-xl">
         <Link to="/" className="flex items-center gap-3">
-          <span className="flex size-9 items-center justify-center rounded-xl border border-border bg-surface-2">
-            <span className="block size-4 rounded-full bg-foreground/85 shadow-[inset_-4px_-2px_0_0_var(--surface-2)]" />
+          <span className="flex size-9 items-center justify-center">
+            <img src="/airavoto-logo.png" alt="Airavoto" width={32} height={32} style={{ filter: "brightness(0) invert(1)" }} />
           </span>
           <span className="text-lg font-semibold tracking-tight">
             Airavoto<sup className="ml-0.5 text-[9px] font-medium text-muted-foreground">POS</sup>
