@@ -291,30 +291,30 @@ function Index() {
             className="mx-auto flex w-fit items-center gap-2.5 rounded-full border border-border/80 bg-[oklch(0.2_0_0/0.9)] py-2 pl-3 pr-4 text-sm font-medium backdrop-blur-md"
           >
             <span className="block size-4 rounded-full bg-foreground/85 shadow-[inset_-4px_-2px_0_0_var(--surface-2)]" />
-            Manage projects end-to-end
+            Complete gaming center management
             <ArrowRight className="size-4 text-muted-foreground" />
           </a>
           <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-7xl md:text-[5.2rem]">
-            Plan and navigate from idea to launch.
+            Airavoto Gaming POS — free, complete, no hidden charges.
           </h1>
           <p className="mx-auto mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Create a clear roadmap, track progress, and smoothly guide your project from idea
-            to successful launch.
+            Run every seat, session, booking, order and expense in your gaming center from one
+            fast dashboard. Download the full software free.
           </p>
           <div className="mt-9 flex flex-col items-center gap-4">
             <a
-              href="#pricing"
-              className="inline-flex items-center rounded-2xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              href="#download"
+              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Get Started For Free
+              <Download className="size-5" /> Download Free
             </a>
             <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <Info className="size-4" /> No credit card required
+              <ShieldCheck className="size-4" /> No payment, no hidden charges
             </p>
           </div>
 
           <p className="mt-24 text-sm text-muted-foreground">
-            Trusted by 50,000+ businesses for innovative design and growth.
+            Built for every seat type in a modern gaming center.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 opacity-45">
             {brands.map((b) => (
@@ -330,16 +330,16 @@ function Index() {
       <Section id="features">
         <SectionHeading
           eyebrow="Overview"
-          title="Suprema at a Glance"
-          subtitle="Everything a launch needs — planning, ownership and progress — held together in one surface."
+          title="Your whole gaming center, one panel"
+          subtitle="Seat occupancy, walk-ins, timers, food orders, payments and reports — live in a single admin dashboard."
         />
         <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-surface p-2 shadow-[var(--shadow-soft)]">
           <img
-            src={dashboard}
-            alt="Suprema project workspace showing tasks, owners, priorities and progress"
+            src={posShot.url}
+            alt="Airavoto Gaming POS seat management dashboard showing PS5 and PC occupancy, walk-in list and booking table"
             loading="lazy"
-            width={1600}
-            height={1008}
+            width={1366}
+            height={768}
             className="w-full rounded-xl"
           />
         </div>
@@ -357,9 +357,9 @@ function Index() {
       {/* Potential */}
       <Section>
         <SectionHeading
-          eyebrow="Capabilities"
-          title="Unlock Your Team's Potential"
-          subtitle="Fewer tools, less status chasing, and a plan that stays honest as the work moves."
+          eyebrow="Why Airavoto"
+          title="Why choose Airavoto Gaming POS"
+          subtitle="Transform your center into a highly efficient, profitable operation with one integrated system."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {potential.slice(0, 3).map(({ icon: Icon, title, body }) => (
@@ -380,18 +380,18 @@ function Index() {
           ))}
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          <Stat value="76%" label="Less time spent in status updates each week" />
-          <Stat value="12M+" label="Tasks planned and shipped through Suprema" />
-          <Stat value="600+" label="Product teams running launches with us" />
+          <Stat value="16" label="Database tables covering every operation" />
+          <Stat value="100%" label="Free — every module unlocked forever" />
+          <Stat value="24/7" label="Live session tracking and status boards" />
         </div>
       </Section>
 
       {/* Pricing */}
-      <Section id="pricing">
+      <Section id="download">
         <SectionHeading
-          eyebrow="Pricing"
-          title="Affordable Pricing Plans"
-          subtitle="Start free, upgrade when your roadmap outgrows it. No hidden seats, no surprise fees."
+          eyebrow="Download"
+          title="Free forever. No hidden charges."
+          subtitle="Download the complete Airavoto Gaming POS software — every feature unlocked, no trial, no seat limits."
         />
         <div className="mx-auto mt-12 grid max-w-3xl gap-4 md:grid-cols-2">
           {plans.map((p) => (
@@ -425,13 +425,13 @@ function Index() {
                     : "border border-border bg-surface-2 text-foreground"
                 }`}
               >
-                Get started
+                Download now
               </a>
             </div>
           ))}
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground">
-          {["Free updates", "Cancel anytime", "24/7 support", "Secure payments"].map((i) => (
+          {["Free lifetime updates", "No subscription", "No hidden charges", "All features unlocked"].map((i) => (
             <span key={i} className="inline-flex items-center gap-2">
               <Check className="size-3.5" /> {i}
             </span>
