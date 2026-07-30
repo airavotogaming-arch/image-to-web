@@ -1,16 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
-  Bell,
   Check,
-  Globe,
-  Info,
+  Download,
+  Gamepad2,
   LineChart,
   Lock,
-  Puzzle,
+  Package,
+  RefreshCw,
+  ShieldCheck,
   Star,
-  Users,
-  Workflow,
+  Timer,
+  Utensils,
+  Wallet,
   Zap,
 } from "lucide-react";
 import {
@@ -25,22 +27,22 @@ import { HeroFloaters } from "@/components/site/HeroFloaters";
 import { HeroLights } from "@/components/site/HeroLights";
 import { Eyebrow, Section, SectionHeading, Stat } from "@/components/site/primitives";
 import heroGlow from "@/assets/hero-glow.jpg";
-import dashboard from "@/assets/dashboard.jpg";
+import posShot from "@/assets/airavoto-pos.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Suprema — Plan and Navigate From Idea to Launch" },
+      { title: "Airavoto Gaming POS — Free Gaming Center Software" },
       {
         name: "description",
         content:
-          "Suprema is the dark, focused planning workspace where teams map roadmaps, track progress and ship launches faster.",
+          "Download Airavoto Gaming POS free — complete gaming center management with live session tracking, bookings, food, inventory and finance. No hidden charges.",
       },
-      { property: "og:title", content: "Suprema — Plan and Navigate From Idea to Launch" },
+      { property: "og:title", content: "Airavoto Gaming POS — Free Gaming Center Software" },
       {
         property: "og:description",
         content:
-          "Roadmaps, real-time collaboration and progress analytics in one calm workspace built for teams who ship.",
+          "All-in-one POS for PC, PS5, VR and simulator centers. Sessions, bookings, food, inventory and reports — free, complete, no hidden charges.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -49,139 +51,156 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const brands = ["Linkfy", "Cloudex", "Nexora", "Pulsar", "Orbit", "Vertex"];
+const brands = ["PC", "PS5", "Xbox", "VR", "Simulators", "Snooker"];
 
 const glanceCards = [
   {
-    icon: Workflow,
-    title: "Smart Task Management",
-    body: "Break big launches into ordered, owned steps with automatic dependencies and clear next actions.",
+    icon: Timer,
+    title: "Real-time Session Management",
+    body: "Track sessions across PC, consoles, VR and simulators with visual and audio countdown timers, auto status updates and pause/resume.",
   },
   {
-    icon: LineChart,
-    title: "Live Progress Tracking",
-    body: "Every milestone reports itself, so status meetings turn into a glance at one honest bar.",
+    icon: Gamepad2,
+    title: "Streamlined Booking Management",
+    body: "Walk-ins and advance reservations with conflict detection, instant seat allocation, bulk party bookings and full customer history.",
   },
   {
-    icon: Bell,
-    title: "Priority Alerts",
-    body: "Get pinged only when something actually blocks the launch — never for routine noise.",
+    icon: Utensils,
+    title: "Integrated Food & Inventory",
+    body: "Item catalog, orders attached to bookings, real-time quantity tracking, configurable pricing and F&B revenue analytics.",
   },
   {
-    icon: Puzzle,
-    title: "Plug Into Your Stack",
-    body: "Connect the tools your team already lives in and keep a single source of truth.",
+    icon: Wallet,
+    title: "Comprehensive Financials",
+    body: "Expense categorisation, monthly and quarterly summaries, revenue tracking and CSV/PDF export for easy accounting.",
   },
 ];
 
 const potential = [
   {
     icon: Zap,
-    title: "Instant Workflows",
-    body: "Spin up a launch plan from a template in seconds instead of an afternoon.",
+    title: "Streamlined Operations",
+    body: "One centralised panel for every activity in the center, cutting manual effort to a minimum.",
   },
   {
-    icon: Users,
-    title: "Seamless Collaboration",
-    body: "Comments, mentions and shared docs sit next to the work, not in another tab.",
+    icon: RefreshCw,
+    title: "Live Data Sync",
+    body: "Seat availability, timers and orders stay current across every screen in the venue.",
   },
   {
     icon: Lock,
     title: "Enterprise Security",
-    body: "SOC 2 controls, SSO and granular permissions protect every roadmap you own.",
+    body: "Role-based access control, bcrypt password hashing and secure sessions protect your data.",
   },
   {
-    icon: Globe,
-    title: "Global Timezones",
-    body: "Schedules adapt to each teammate, so handoffs happen while you sleep.",
+    icon: LineChart,
+    title: "Data-Driven Decisions",
+    body: "Actionable analytics and reports across occupancy, revenue, F&B and expenses.",
   },
   {
-    icon: Star,
-    title: "Built to Scale",
-    body: "From a two-person sprint to a thousand-seat rollout with the same clean surface.",
+    icon: Package,
+    title: "Future-Proof Scalability",
+    body: "Flexible device and pricing configurations that grow with new seats, rooms and formats.",
   },
 ];
 
 const plans = [
   {
-    name: "Starter",
-    price: "$0",
-    note: "Free forever for small teams",
-    features: ["Up to 3 projects", "Basic task board", "2 GB file storage", "Community support"],
-    featured: false,
-  },
-  {
-    name: "Pro",
-    price: "$24",
-    note: "Per user / month, billed yearly",
+    name: "Free Download",
+    price: "₹0",
+    note: "Complete software — no hidden charges",
     features: [
-      "Unlimited projects",
-      "Timeline & roadmap views",
-      "Progress analytics",
-      "Priority support",
-      "Advanced integrations",
+      "All modules unlocked",
+      "Unlimited seats & devices",
+      "Sessions, bookings, food, inventory",
+      "Expenses, reports & loyalty",
+      "Free lifetime updates",
     ],
     featured: true,
+  },
+  {
+    name: "Self-Hosted",
+    price: "₹0",
+    note: "Run it on your own PC or server",
+    features: [
+      "Your data stays with you",
+      "PostgreSQL database included",
+      "Offline-friendly local setup",
+      "Community support",
+    ],
+    featured: false,
   },
 ];
 
 const posts = [
-  { tag: "Product", title: "How we rebuilt roadmap planning around momentum", date: "Mar 14, 2026" },
-  { tag: "Teams", title: "The quiet cost of status meetings (and the fix)", date: "Mar 02, 2026" },
-  { tag: "Guides", title: "A launch checklist that survives contact with reality", date: "Feb 18, 2026" },
+  { tag: "Frontend", title: "React 18 + TypeScript, Vite, TanStack Query, Tailwind & shadcn/ui", date: "Type-safe UI" },
+  { tag: "Backend", title: "Express + TypeScript, Drizzle ORM, Bcrypt, RESTful API", date: "Scalable API" },
+  { tag: "Database", title: "PostgreSQL via Neon with a 16-table operations schema", date: "Reliable storage" },
 ];
 
-const team = [
-  { name: "Ava Mercer", role: "Founder & CEO" },
-  { name: "Daniel Roth", role: "Head of Product" },
-  { name: "Sofia Lang", role: "Design Lead" },
-  { name: "Ken Osei", role: "Engineering" },
+const schema = [
+  "Bookings",
+  "Booking History",
+  "Users",
+  "Device Configs",
+  "Pricing Configs",
+  "Food Items",
+  "Expenses",
+  "Activity Logs",
+  "Loyalty Members",
+  "Loyalty Events",
+  "Loyalty Config",
+  "Game Updates",
+  "Center Info",
+  "Gallery Images",
+  "Facilities",
+  "Games",
 ];
 
 const testimonials = [
   {
     quote:
-      "We replaced three tools with Suprema and our launch cycle dropped from nine weeks to five.",
-    name: "Marta Klein",
-    role: "VP Operations, Cloudex",
+      "Timers, billing and food orders finally live in one screen. Our counter queue disappeared.",
+    name: "Rahul Menon",
+    role: "Owner, LevelUp Gaming Arena",
   },
   {
     quote:
-      "The progress view is the first dashboard my team actually trusts. Nothing hides in it.",
-    name: "Ryan Patel",
-    role: "Product Lead, Nexora",
+      "Seat occupancy and expiry alerts are accurate to the second — no more disputed sessions.",
+    name: "Sneha Kapoor",
+    role: "Manager, Nexus Esports Cafe",
   },
   {
-    quote: "Onboarding took an afternoon. By Friday the whole roadmap lived in one place.",
-    name: "Lena Fischer",
-    role: "COO, Pulsar",
+    quote: "Completely free and it does more than the paid POS we were using before.",
+    name: "Arjun Nair",
+    role: "Founder, Respawn Gaming Zone",
   },
 ];
 
 const faqs = [
   {
+    q: "Is Airavoto Gaming POS really free?",
+    a: "Yes. The complete software is free to download with every module unlocked — no trial period, no hidden charges and no locked features.",
+  },
+  {
+    q: "Which devices can it manage?",
+    a: "PC, PS5 and other consoles, VR rigs, racing simulators and any custom seat type you configure in device settings.",
+  },
+  {
     q: "How long does setup take?",
-    a: "Most teams import their existing projects and are running the same day — no implementation call required.",
-  },
-  {
-    q: "Can I change plans later?",
-    a: "Yes. Upgrade, downgrade or cancel at any time from billing, and we prorate the difference automatically.",
-  },
-  {
-    q: "Do you offer a free trial?",
-    a: "Every paid plan starts with a 7-day trial with full access. No credit card needed to begin.",
+    a: "Most centers download, configure their seats and pricing, and start billing sessions the same day.",
   },
   {
     q: "Is my data secure?",
-    a: "Data is encrypted in transit and at rest, with SSO, audit logs and role-based permissions on Pro.",
+    a: "Role-based access control, bcrypt password hashing, secure express sessions and full activity logs protect every record.",
   },
   {
-    q: "Does Suprema work for remote teams?",
-    a: "It is built for them. Timezone-aware scheduling and async updates keep distributed teams aligned.",
+    q: "Can I run it on my own machine?",
+    a: "Yes. Self-host it on your counter PC or a server with PostgreSQL — your data never has to leave the venue.",
   },
   {
-    q: "Can I integrate my own tools?",
-    a: "Connect Slack, GitHub, Figma, Notion and more, or build your own workflow with the open API.",
+    q: "Do I get updates?",
+    a: "Free lifetime updates. New features, fixes and modules arrive at no extra cost.",
   },
 ];
 
