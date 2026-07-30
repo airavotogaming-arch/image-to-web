@@ -381,7 +381,7 @@ function Index() {
           title="Free forever. No hidden charges."
           subtitle="Download the complete Airavoto Gaming POS software — every feature unlocked, no trial, no seat limits."
         />
-        <div className="mx-auto mt-12 flex max-w-4xl items-center gap-8">
+        <div className="mx-auto mt-12 flex max-w-4xl items-center">
           {/* Card */}
           {plans.map((p) => (
             <div
@@ -420,7 +420,7 @@ function Index() {
           ))}
 
           {/* Boy illustration pointing left at the card */}
-          <div className="hidden shrink-0 md:block">
+          <div className="relative z-10 -ml-24 hidden shrink-0 md:block">
             <img
               src="/boy-pointing.png"
               alt="Boy pointing at the download card"
