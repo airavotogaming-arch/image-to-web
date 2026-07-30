@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/accordion";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { HeroFloaters, HeroFloatersMobile } from "@/components/site/HeroFloaters";
+import { HeroFloaters } from "@/components/site/HeroFloaters";
 import { HeroLights } from "@/components/site/HeroLights";
 import { Eyebrow, Section, SectionHeading, Stat } from "@/components/site/primitives";
 import heroGlow from "@/assets/hero-glow.jpg";
@@ -273,7 +273,6 @@ function Index() {
         />
         <HeroLights />
         <HeroFloaters />
-        <HeroFloatersMobile />
         <div className="relative mx-auto w-full max-w-6xl px-5 text-center">
           <a
             href="#features"

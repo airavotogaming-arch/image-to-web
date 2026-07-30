@@ -25,57 +25,6 @@ const sessions = [
   { seat: "PC-4", customer: "Rahul", time: "2:10 left", status: "Active" },
 ];
 
-export function HeroFloatersMobile() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 select-none lg:hidden"
-      style={{
-        maskImage: "linear-gradient(to bottom, black 55%, transparent 92%)",
-        WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 92%)",
-      }}
-    >
-      {/* top left — live session (compact) */}
-      <div className="absolute left-3 top-16 w-[38%] max-w-[10.5rem] rounded-xl border border-border/80 bg-[oklch(0.17_0_0/0.85)] p-2.5 opacity-80 shadow-[var(--shadow-soft)] backdrop-blur-sm sm:top-20">
-        <div className="flex items-center gap-1.5 text-[9px] font-medium">
-          <Timer className="size-3 text-[oklch(0.72_0.16_150)]" /> Live Session
-        </div>
-        <div className="mt-2 flex items-center justify-between rounded-md bg-surface-2 px-2 py-1.5">
-          <div>
-            <div className="text-[11px] font-semibold">PC-3</div>
-            <div className="text-[8px] text-muted-foreground">Vikram</div>
-          </div>
-          <div className="text-right text-[10px] font-mono font-semibold text-[oklch(0.72_0.16_150)]">
-            48:12
-          </div>
-        </div>
-      </div>
-
-      {/* top right — seat occupancy (compact) */}
-      <div className="absolute right-3 top-16 w-[36%] max-w-[9.5rem] rounded-xl border border-border/80 bg-[oklch(0.17_0_0/0.85)] p-2.5 opacity-80 shadow-[var(--shadow-soft)] backdrop-blur-sm sm:top-20">
-        <div className="flex items-center gap-1.5 text-[9px] font-medium text-muted-foreground">
-          <Gamepad2 className="size-3" /> Occupancy
-        </div>
-        <div className="mt-2 space-y-1.5">
-          {[
-            { label: "PC", filled: 8, total: 10 },
-            { label: "PS5", filled: 4, total: 5 },
-          ].map((s) => (
-            <div key={s.label} className="flex gap-0.5">
-              {Array.from({ length: s.total }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`h-1 flex-1 rounded-full ${i < s.filled ? "bg-[oklch(0.72_0.16_150)]" : "bg-surface-2"}`}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function HeroFloaters() {
   return (
     <div
