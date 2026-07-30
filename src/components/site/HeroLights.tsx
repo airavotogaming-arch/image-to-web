@@ -25,8 +25,8 @@ export function HeroLights() {
           style={{
             left: p.left,
             top: p.top,
-            width: `min(${p.size}px, ${p.size}px)`,
-            height: `min(${p.size}px, ${p.size}px)`,
+            width: p.size,
+            height: p.size,
             backgroundColor: p.color,
             filter: "blur(1.5px)",
             opacity: p.opacity,
