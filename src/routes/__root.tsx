@@ -77,14 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Airavoto Gaming POS — Free, Complete, No Hidden Charges" },
+      { name: "description", content: "Run every seat, session, booking, food order, payment and report in your gaming center from one fast dashboard. Download free — no hidden charges." },
+      { name: "author", content: "Airavoto" },
+      { property: "og:title", content: "Airavoto Gaming POS — Free, Complete, No Hidden Charges" },
+      { property: "og:description", content: "Run every seat, session, booking, food order, payment and report in your gaming center from one fast dashboard. Download free." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/airavoto-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@airavotogaming" },
+      { name: "twitter:title", content: "Airavoto Gaming POS — Free, Complete, No Hidden Charges" },
+      { name: "twitter:description", content: "Run every seat, session, booking, food order, payment and report in your gaming center from one fast dashboard. Download free." },
     ],
     links: [
       {
