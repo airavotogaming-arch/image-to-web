@@ -2,14 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Check,
   ChevronDown,
+  Copy,
   Download,
   HardDrive,
   Monitor,
-  Package,
-  Server,
+  RefreshCw,
   ShieldCheck,
-  Terminal,
-  Zap,
+  Sparkles,
 } from "lucide-react";
 import { useState } from "react";
 import { Navbar } from "@/components/site/Navbar";
@@ -45,27 +44,9 @@ const steps = [
   },
   {
     n: "03",
-    icon: Terminal,
-    title: "Configure .env",
-    body: "Copy .env.example to .env and fill in your database URL and a session secret.",
-  },
-  {
-    n: "04",
-    icon: Package,
-    title: "Install dependencies",
-    body: "Run npm install in both the root and client folders to pull in all packages.",
-  },
-  {
-    n: "05",
-    icon: Server,
-    title: "Run migrations",
-    body: "Run npm run db:migrate to create all 16 tables in your PostgreSQL database.",
-  },
-  {
-    n: "06",
-    icon: Zap,
-    title: "Start the app",
-    body: "Run npm run dev (development) or npm run start (production). Open localhost:3000.",
+    icon: Sparkles,
+    title: "Fill the form below",
+    body: "Enter your details and we'll generate a ready-to-use .env config — just drop it in and start the app.",
   },
 ];
 
@@ -104,6 +85,148 @@ const faqs = [
     a: "All data stays on your machine — nothing is sent to any external server. Staff accounts use bcrypt-hashed passwords and role-based access control.",
   },
 ];
+
+function randomSecret() {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  return Array.from({ length: 48 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+}
+
+function SetupForm() {
+  const [form, setForm] = useState({
+    centerName: "",
+    dbUrl: "postgresql://postgres:yourpassword@localhost:5432/airavoto_pos",
+    sessionSecret: randomSecret(),
+    port: "3000",
+  });
+  const [done, setDone] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const envContent = `# Airavoto Gaming POS — generated config
+CENTER_NAME="${form.centerName}"
+DATABASE_URL="${form.dbUrl}"
+SESSION_SECRET="${form.sessionSecret}"
+PORT=${form.port}
+NODE_ENV=production`;
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setDone(true);
+  }
+
+  function handleCopy() {
+    navigator.clipboard.writeText(envContent);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  const field =
+    "w-full rounded-xl border border-border bg-surface-2 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/60";
+
+  return (
+    <div className="mx-auto mt-14 max-w-2xl">
+      <div className="panel p-8">
+        <div className="flex items-center gap-3">
+          <span className="flex size-9 items-center justify-center rounded-xl border border-border bg-surface-2">
+            <Sparkles className="size-4 text-foreground/70" />
+          </span>
+          <div>
+            <div className="text-sm font-semibold">Generate your .env</div>
+            <div className="text-[11px] text-muted-foreground">Fill in your details — drop the file in and start the app</div>
+          </div>
+        </div>
+
+        {!done ? (
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <div>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Gaming Center Name</label>
+              <input
+                className={field}
+                placeholder="e.g. Arena Pro Gaming"
+                value={form.centerName}
+                onChange={(e) => setForm({ ...form, centerName: e.target.value })}
+                required
+              />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">PostgreSQL Database URL</label>
+              <input
+                className={field}
+                placeholder="postgresql://user:pass@localhost:5432/airavoto_pos"
+                value={form.dbUrl}
+                onChange={(e) => setForm({ ...form, dbUrl: e.target.value })}
+                required
+              />
+              <p className="mt-1 text-[11px] text-muted-foreground">Replace <code className="text-foreground/70">yourpassword</code> with your actual PostgreSQL password.</p>
+            </div>
+            <div>
+              <label className="mb-1.5 flex items-center justify-between text-xs font-medium text-muted-foreground">
+                Session Secret
+                <button
+                  type="button"
+                  onClick={() => setForm({ ...form, sessionSecret: randomSecret() })}
+                  className="inline-flex items-center gap-1 text-[11px] text-primary hover:underline"
+                >
+                  <RefreshCw className="size-3" /> Regenerate
+                </button>
+              </label>
+              <input
+                className={field + " font-mono text-xs"}
+                value={form.sessionSecret}
+                onChange={(e) => setForm({ ...form, sessionSecret: e.target.value })}
+                required
+              />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">App Port</label>
+              <input
+                className={field}
+                placeholder="3000"
+                value={form.port}
+                onChange={(e) => setForm({ ...form, port: e.target.value })}
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="mt-2 w-full rounded-xl bg-primary py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Generate .env file →
+            </button>
+          </form>
+        ) : (
+          <div className="mt-6">
+            <div className="flex items-center justify-between rounded-t-xl border border-b-0 border-border bg-surface px-4 py-2.5">
+              <span className="font-mono text-xs text-muted-foreground">.env</span>
+              <button
+                onClick={handleCopy}
+                className="inline-flex items-center gap-1.5 text-xs text-primary transition-opacity hover:opacity-80"
+              >
+                <Copy className="size-3.5" />
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
+            <pre className="overflow-x-auto rounded-b-xl border border-border bg-[oklch(0.08_0_0)] px-4 py-4 font-mono text-xs leading-relaxed text-foreground/85">
+              {envContent}
+            </pre>
+            <div className="mt-4 rounded-xl border border-border/60 bg-surface px-4 py-3">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                <span className="font-medium text-foreground">Next steps:</span> Save this as <code className="text-foreground/70">.env</code> in your project root, then run{" "}
+                <code className="text-foreground/70">npm install</code>, <code className="text-foreground/70">npm run db:migrate</code>, and{" "}
+                <code className="text-foreground/70">npm run start</code>. Open <code className="text-foreground/70">localhost:{form.port}</code> — you're live.
+              </p>
+            </div>
+            <button
+              onClick={() => setDone(false)}
+              className="mt-3 text-xs text-muted-foreground hover:text-foreground underline"
+            >
+              ← Edit details
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -218,7 +341,7 @@ function DownloadPage() {
           title="Up and running in minutes"
           subtitle="Most gaming centers download, configure their seats and start billing sessions the same day."
         />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
           {steps.map(({ n, icon: Icon, title, body }) => (
             <div key={n} className="panel p-6">
               <div className="flex items-start justify-between">
@@ -232,6 +355,7 @@ function DownloadPage() {
             </div>
           ))}
         </div>
+        <SetupForm />
       </Section>
 
       {/* System requirements */}
