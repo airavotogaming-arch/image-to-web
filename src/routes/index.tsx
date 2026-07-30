@@ -9,12 +9,12 @@ import {
   Package,
   RefreshCw,
   ShieldCheck,
-  Star,
   Timer,
   Utensils,
   Wallet,
   Zap,
 } from "lucide-react";
+import { posts as blogPosts, categoryColors } from "@/lib/blog-posts";
 import {
   Accordion,
   AccordionContent,
@@ -589,24 +589,45 @@ function Index() {
         </div>
       </Section>
 
-      {/* Testimonials */}
+      {/* Blog preview */}
       <Section>
-        <SectionHeading eyebrow="Testimonials" title="What Gaming Centers Say" />
+        <div className="flex items-end justify-between">
+          <SectionHeading eyebrow="Blog" title="From the Blog" className="mb-0" />
+          <Link
+            to="/blog"
+            className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            All posts <ArrowRight className="size-4" />
+          </Link>
+        </div>
         <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="panel flex flex-col p-6">
-              <div className="flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3.5 fill-current text-foreground/70" />
-                ))}
+          {blogPosts.slice(0, 3).map((post) => (
+            <Link
+              key={post.slug}
+              to="/blog/$slug"
+              params={{ slug: post.slug }}
+              className="panel group flex flex-col overflow-hidden transition-colors hover:bg-surface-2"
+            >
+              <div className="h-40 overflow-hidden">
+                <img
+                  src={post.img}
+                  alt={post.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-              <blockquote className="mt-4 text-sm leading-relaxed text-foreground/85">
-                “{t.quote}”
-              </blockquote>
-              <figcaption className="mt-auto pt-6 text-xs text-muted-foreground">
-                <span className="text-foreground">{t.name}</span> — {t.role}
-              </figcaption>
-            </figure>
+              <div className="flex flex-1 flex-col p-5">
+                <div className="flex items-center gap-2">
+                  <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${categoryColors[post.category]}`}>
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-muted-foreground">{post.readTime} read</span>
+                </div>
+                <h3 className="mt-3 text-sm font-semibold leading-snug">{post.title}</h3>
+                <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                  {post.excerpt}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </Section>
