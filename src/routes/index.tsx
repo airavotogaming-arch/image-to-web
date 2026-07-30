@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
@@ -308,12 +308,12 @@ function Index() {
             fast dashboard. Download the full software free.
           </p>
           <div className="mt-9 flex flex-col items-center gap-4">
-            <a
-              href="#download"
+            <Link
+              to="/download"
               className="inline-flex items-center gap-2 rounded-2xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               <Download className="size-5" /> Download Free
-            </a>
+            </Link>
             <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
               <ShieldCheck className="size-4" /> No payment, no hidden charges
             </p>
