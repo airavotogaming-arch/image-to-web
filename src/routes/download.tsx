@@ -3,7 +3,6 @@ import {
   Check,
   ChevronDown,
   Download,
-  Github,
   HardDrive,
   Monitor,
   Package,
@@ -155,11 +154,10 @@ function DownloadPage() {
         </div>
       </section>
 
-      {/* Download cards */}
+      {/* Download card */}
       <Section>
-        <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
-          {/* Primary */}
-          <div className="panel flex flex-col p-8 shadow-[var(--shadow-glow)]">
+        <div className="mx-auto max-w-lg">
+          <div className="panel flex flex-col p-10 shadow-[var(--shadow-glow)]">
             <div className="flex items-center gap-3">
               <span className="flex size-10 items-center justify-center rounded-xl border border-border bg-surface-2">
                 <Download className="size-5" />
@@ -169,12 +167,12 @@ function DownloadPage() {
                 <div className="text-[11px] text-muted-foreground">Latest stable release</div>
               </div>
               <span className="ml-auto rounded-full border border-border bg-surface-2 px-2.5 py-1 text-[11px] text-muted-foreground">
-                Most popular
+                Complete software
               </span>
             </div>
             <div className="mt-6 text-5xl font-bold tracking-tight">₹0</div>
-            <p className="mt-1 text-xs text-muted-foreground">Complete software — no hidden charges</p>
-            <ul className="mt-6 space-y-3">
+            <p className="mt-1 text-xs text-muted-foreground">No hidden charges, ever</p>
+            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3">
               {[
                 "All 6 modules fully unlocked",
                 "Unlimited seats & devices",
@@ -190,54 +188,14 @@ function DownloadPage() {
               ))}
             </ul>
             <a
-              href="https://github.com/airavoto/gaming-pos/releases/latest"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              href="#"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               <Download className="size-4" /> Download free
             </a>
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-              <ShieldCheck className="size-3.5" /> No payment required
+              <ShieldCheck className="size-3.5" /> No payment required · No account needed
             </div>
-          </div>
-
-          {/* Self-hosted */}
-          <div className="panel flex flex-col p-8">
-            <div className="flex items-center gap-3">
-              <span className="flex size-10 items-center justify-center rounded-xl border border-border bg-surface-2">
-                <Github className="size-5" />
-              </span>
-              <div>
-                <div className="text-sm font-semibold">GitHub Source</div>
-                <div className="text-[11px] text-muted-foreground">Clone & self-host</div>
-              </div>
-            </div>
-            <div className="mt-6 text-5xl font-bold tracking-tight">₹0</div>
-            <p className="mt-1 text-xs text-muted-foreground">Run it on your own PC or server</p>
-            <ul className="mt-6 space-y-3">
-              {[
-                "Full source code access",
-                "Your data stays with you",
-                "PostgreSQL database included",
-                "Offline-friendly local setup",
-                "Community support via GitHub",
-                "Fork and customise freely",
-              ].map((f) => (
-                <li key={f} className="flex items-center gap-2.5 text-sm text-foreground/85">
-                  <Check className="size-4 shrink-0 text-foreground/50" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="https://github.com/airavoto/gaming-pos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface-2 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-surface"
-            >
-              <Github className="size-4" /> View on GitHub
-            </a>
           </div>
         </div>
 
