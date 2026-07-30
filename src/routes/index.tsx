@@ -358,13 +358,25 @@ function Index() {
               ↗
             </a>
           </div>
-          <iframe
-            src="https://demotestposairavoto.onrender.com/"
-            title="Airavoto Gaming POS live demo"
-            className="w-full"
-            style={{ height: "640px", border: "none", display: "block" }}
-            allow="fullscreen"
-          />
+          <div className="relative">
+            <iframe
+              src="https://demotestposairavoto.onrender.com/"
+              title="Airavoto Gaming POS live demo"
+              className="block h-[640px] w-full border-none"
+              allow="fullscreen"
+            />
+            <div className="absolute inset-0 flex items-center justify-center backdrop-blur-[2px]">
+              <a
+                href="https://demotestposairavoto.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-xl transition hover:bg-white/90"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                Click here to view demo
+              </a>
+            </div>
+          </div>
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {glanceCards.map(({ icon: Icon, title, body }) => (
