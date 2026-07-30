@@ -33,20 +33,20 @@ const steps = [
   {
     n: "01",
     icon: Download,
-    title: "Download the release",
-    body: 'Click "Download Free" above to get the latest release ZIP from GitHub.',
+    title: "Install",
+    body: "Download the release ZIP and install PostgreSQL (v14+). Create a database named airavoto_pos.",
   },
   {
     n: "02",
-    icon: HardDrive,
-    title: "Install PostgreSQL",
-    body: "Install PostgreSQL (v14+) on your machine. Create a database named airavoto_pos.",
+    icon: Sparkles,
+    title: "Fill the form",
+    body: "Enter your gaming center details below. Takes 30 seconds.",
   },
   {
     n: "03",
-    icon: Sparkles,
-    title: "Fill the form below",
-    body: "Enter your details and we'll generate a ready-to-use .env config — just drop it in and start the app.",
+    icon: HardDrive,
+    title: "Ready to start",
+    body: "Run the app and open it in your browser. Your center is configured and ready to go.",
   },
 ];
 
@@ -86,41 +86,43 @@ const faqs = [
   },
 ];
 
-function randomSecret() {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  return Array.from({ length: 48 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
-}
-
 function SetupForm() {
-  const [form, setForm] = useState({
-    centerName: "",
-    dbUrl: "postgresql://postgres:yourpassword@localhost:5432/airavoto_pos",
-    sessionSecret: randomSecret(),
-    port: "3000",
-  });
+  const [form, setForm] = useState({ centerName: "", ownerName: "", city: "", seats: "" });
   const [done, setDone] = useState(false);
-  const [copied, setCopied] = useState(false);
 
-  const envContent = `# Airavoto Gaming POS — generated config
-CENTER_NAME="${form.centerName}"
-DATABASE_URL="${form.dbUrl}"
-SESSION_SECRET="${form.sessionSecret}"
-PORT=${form.port}
-NODE_ENV=production`;
+  const field =
+    "w-full rounded-xl border border-border bg-surface-2 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/60";
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setDone(true);
   }
 
-  function handleCopy() {
-    navigator.clipboard.writeText(envContent);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  if (done) {
+    return (
+      <div className="mx-auto mt-14 max-w-2xl">
+        <div className="panel p-8 text-center">
+          <span className="inline-flex size-14 items-center justify-center rounded-2xl border border-border bg-surface-2">
+            <Check className="size-7 text-foreground/70" />
+          </span>
+          <h3 className="mt-5 text-xl font-semibold tracking-tight">You're ready to start!</h3>
+          <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">{form.centerName}</span> is all set. Run the app and open it in your browser — your center details will be waiting inside.
+          </p>
+          <div className="mx-auto mt-6 max-w-xs rounded-xl border border-border bg-[oklch(0.08_0_0)] px-5 py-3.5 font-mono text-sm text-foreground/80">
+            npm run start
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">Then open <span className="text-foreground/70">localhost:3000</span></p>
+          <button
+            onClick={() => setDone(false)}
+            className="mt-5 text-xs text-muted-foreground underline hover:text-foreground"
+          >
+            ← Edit details
+          </button>
+        </div>
+      </div>
+    );
   }
-
-  const field =
-    "w-full rounded-xl border border-border bg-surface-2 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/60";
 
   return (
     <div className="mx-auto mt-14 max-w-2xl">
@@ -130,13 +132,12 @@ NODE_ENV=production`;
             <Sparkles className="size-4 text-foreground/70" />
           </span>
           <div>
-            <div className="text-sm font-semibold">Generate your .env</div>
-            <div className="text-[11px] text-muted-foreground">Fill in your details — drop the file in and start the app</div>
+            <div className="text-sm font-semibold">Set up your gaming center</div>
+            <div className="text-[11px] text-muted-foreground">Fill in your details — takes 30 seconds</div>
           </div>
         </div>
-
-        {!done ? (
-          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Gaming Center Name</label>
               <input
@@ -148,81 +149,47 @@ NODE_ENV=production`;
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">PostgreSQL Database URL</label>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Owner Name</label>
               <input
                 className={field}
-                placeholder="postgresql://user:pass@localhost:5432/airavoto_pos"
-                value={form.dbUrl}
-                onChange={(e) => setForm({ ...form, dbUrl: e.target.value })}
-                required
-              />
-              <p className="mt-1 text-[11px] text-muted-foreground">Replace <code className="text-foreground/70">yourpassword</code> with your actual PostgreSQL password.</p>
-            </div>
-            <div>
-              <label className="mb-1.5 flex items-center justify-between text-xs font-medium text-muted-foreground">
-                Session Secret
-                <button
-                  type="button"
-                  onClick={() => setForm({ ...form, sessionSecret: randomSecret() })}
-                  className="inline-flex items-center gap-1 text-[11px] text-primary hover:underline"
-                >
-                  <RefreshCw className="size-3" /> Regenerate
-                </button>
-              </label>
-              <input
-                className={field + " font-mono text-xs"}
-                value={form.sessionSecret}
-                onChange={(e) => setForm({ ...form, sessionSecret: e.target.value })}
+                placeholder="e.g. Rahul Sharma"
+                value={form.ownerName}
+                onChange={(e) => setForm({ ...form, ownerName: e.target.value })}
                 required
               />
             </div>
-            <div>
-              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">App Port</label>
-              <input
-                className={field}
-                placeholder="3000"
-                value={form.port}
-                onChange={(e) => setForm({ ...form, port: e.target.value })}
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="mt-2 w-full rounded-xl bg-primary py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Generate .env file →
-            </button>
-          </form>
-        ) : (
-          <div className="mt-6">
-            <div className="flex items-center justify-between rounded-t-xl border border-b-0 border-border bg-surface px-4 py-2.5">
-              <span className="font-mono text-xs text-muted-foreground">.env</span>
-              <button
-                onClick={handleCopy}
-                className="inline-flex items-center gap-1.5 text-xs text-primary transition-opacity hover:opacity-80"
-              >
-                <Copy className="size-3.5" />
-                {copied ? "Copied!" : "Copy"}
-              </button>
-            </div>
-            <pre className="overflow-x-auto rounded-b-xl border border-border bg-[oklch(0.08_0_0)] px-4 py-4 font-mono text-xs leading-relaxed text-foreground/85">
-              {envContent}
-            </pre>
-            <div className="mt-4 rounded-xl border border-border/60 bg-surface px-4 py-3">
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                <span className="font-medium text-foreground">Next steps:</span> Save this as <code className="text-foreground/70">.env</code> in your project root, then run{" "}
-                <code className="text-foreground/70">npm install</code>, <code className="text-foreground/70">npm run db:migrate</code>, and{" "}
-                <code className="text-foreground/70">npm run start</code>. Open <code className="text-foreground/70">localhost:{form.port}</code> — you're live.
-              </p>
-            </div>
-            <button
-              onClick={() => setDone(false)}
-              className="mt-3 text-xs text-muted-foreground hover:text-foreground underline"
-            >
-              ← Edit details
-            </button>
           </div>
-        )}
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">City</label>
+              <input
+                className={field}
+                placeholder="e.g. Mumbai"
+                value={form.city}
+                onChange={(e) => setForm({ ...form, city: e.target.value })}
+                required
+              />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Number of Seats</label>
+              <input
+                className={field}
+                type="number"
+                placeholder="e.g. 20"
+                min="1"
+                value={form.seats}
+                onChange={(e) => setForm({ ...form, seats: e.target.value })}
+                required
+              />
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="mt-2 w-full rounded-xl bg-primary py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Ready to start →
+          </button>
+        </form>
       </div>
     </div>
   );
