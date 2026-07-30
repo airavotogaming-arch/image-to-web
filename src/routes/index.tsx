@@ -118,18 +118,6 @@ const plans = [
     ],
     featured: true,
   },
-  {
-    name: "Self-Hosted",
-    price: "₹0",
-    note: "Run it on your own PC or server",
-    features: [
-      "Your data stays with you",
-      "PostgreSQL database included",
-      "Offline-friendly local setup",
-      "Community support",
-    ],
-    featured: false,
-  },
 ];
 
 const posts = [
