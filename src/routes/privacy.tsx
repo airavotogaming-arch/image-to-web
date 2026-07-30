@@ -3,12 +3,26 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section } from "@/components/site/primitives";
 
+const TITLE = "Privacy Policy — Airavoto Gaming POS";
+const DESCRIPTION = "Privacy policy for Airavoto Gaming POS.";
+const URL = "https://airavotogaming.com/privacy";
+
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Airavoto Gaming POS" },
-      { name: "description", content: "Privacy policy for Airavoto Gaming POS." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "/airavoto-logo.png" },
+      { property: "og:url", content: URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/airavoto-logo.png" },
     ],
+    links: [{ rel: "canonical", href: URL }],
   }),
   component: PrivacyPage,
 });

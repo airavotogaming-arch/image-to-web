@@ -4,12 +4,26 @@ import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section } from "@/components/site/primitives";
 import { posts, categoryColors } from "@/lib/blog-posts";
 
+const TITLE = "Blog — Airavoto Gaming POS";
+const DESCRIPTION = "Tips, news and stories from gaming centers using Airavoto POS.";
+const URL = "https://airavotogaming.com/blog";
+
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — Airavoto Gaming POS" },
-      { name: "description", content: "Tips, news and stories from gaming centers using Airavoto POS." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "/airavoto-demo-screenshot.png" },
+      { property: "og:url", content: URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/airavoto-demo-screenshot.png" },
     ],
+    links: [{ rel: "canonical", href: URL }],
   }),
   component: BlogPage,
 });

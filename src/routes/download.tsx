@@ -15,16 +15,27 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section, SectionHeading } from "@/components/site/primitives";
 
+const TITLE = "Download — Airavoto Gaming POS";
+const DESCRIPTION =
+  "Download Airavoto Gaming POS free — complete gaming center software with every module unlocked. Self-host on your own PC or server.";
+const URL = "https://airavotogaming.com/download";
+
 export const Route = createFileRoute("/download")({
   head: () => ({
     meta: [
-      { title: "Download — Airavoto Gaming POS" },
-      {
-        name: "description",
-        content:
-          "Download Airavoto Gaming POS free — complete gaming center software with every module unlocked. Self-host on your own PC or server.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "/airavoto-demo-screenshot.png" },
+      { property: "og:url", content: URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/airavoto-demo-screenshot.png" },
     ],
+    links: [{ rel: "canonical", href: URL }],
   }),
   component: DownloadPage,
 });

@@ -4,12 +4,26 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section } from "@/components/site/primitives";
 
+const TITLE = "Changelog — Airavoto Gaming POS";
+const DESCRIPTION = "Release notes and version history for Airavoto Gaming POS.";
+const URL = "https://airavotogaming.com/changelog";
+
 export const Route = createFileRoute("/changelog")({
   head: () => ({
     meta: [
-      { title: "Changelog — Airavoto Gaming POS" },
-      { name: "description", content: "Release notes and version history for Airavoto Gaming POS." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "/airavoto-demo-screenshot.png" },
+      { property: "og:url", content: URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/airavoto-demo-screenshot.png" },
     ],
+    links: [{ rel: "canonical", href: URL }],
   }),
   component: ChangelogPage,
 });

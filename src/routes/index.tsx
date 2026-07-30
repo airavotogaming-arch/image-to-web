@@ -45,8 +45,12 @@ export const Route = createFileRoute("/")({
           "All-in-one POS for PC, PS5, VR and simulator centers. Sessions, bookings, food, inventory and reports — free, complete, no hidden charges.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/airavoto-demo-screenshot.png" },
+      { property: "og:url", content: "https://airavotogaming.com/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/airavoto-demo-screenshot.png" },
     ],
+    links: [{ rel: "canonical", href: "https://airavotogaming.com/" }],
   }),
   component: Index,
 });

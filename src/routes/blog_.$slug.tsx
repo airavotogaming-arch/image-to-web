@@ -105,9 +105,33 @@ function renderContent(content: string) {
 function BlogPostPage() {
   const post = Route.useLoaderData();
   const others = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const url = `https://airavotogaming.com/blog/${post.slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: [post.img],
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    author: { "@type": "Organization", name: "Airavoto", url: "https://airavotogaming.com/" },
+    publisher: {
+      "@type": "Organization",
+      name: "Airavoto Gaming POS",
+      logo: { "@type": "ImageObject", url: "https://airavotogaming.com/airavoto-logo.png" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    articleSection: post.category,
+  };
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      {/* Structured data so search engines can show a rich article result (headline, image, publish date) */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
 
       {/* Hero image */}

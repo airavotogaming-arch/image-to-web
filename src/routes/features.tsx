@@ -24,16 +24,27 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section, SectionHeading, Stat } from "@/components/site/primitives";
 
+const TITLE = "Features — Airavoto Gaming POS";
+const DESCRIPTION =
+  "Explore every module in Airavoto Gaming POS — live session tracking, bookings, food & inventory, expenses, analytics and reports. All free.";
+const URL = "https://airavotogaming.com/features";
+
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — Airavoto Gaming POS" },
-      {
-        name: "description",
-        content:
-          "Explore every module in Airavoto Gaming POS — live session tracking, bookings, food & inventory, expenses, analytics and reports. All free.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "/airavoto-demo-screenshot.png" },
+      { property: "og:url", content: URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/airavoto-demo-screenshot.png" },
     ],
+    links: [{ rel: "canonical", href: URL }],
   }),
   component: FeaturesPage,
 });

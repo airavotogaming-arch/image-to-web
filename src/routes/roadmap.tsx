@@ -4,12 +4,26 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section, SectionHeading } from "@/components/site/primitives";
 
+const TITLE = "Roadmap — Airavoto Gaming POS";
+const DESCRIPTION = "See what's coming next in Airavoto Gaming POS — planned features, improvements and future modules.";
+const URL = "https://airavotogaming.com/roadmap";
+
 export const Route = createFileRoute("/roadmap")({
   head: () => ({
     meta: [
-      { title: "Roadmap — Airavoto Gaming POS" },
-      { name: "description", content: "See what's coming next in Airavoto Gaming POS — planned features, improvements and future modules." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "/airavoto-demo-screenshot.png" },
+      { property: "og:url", content: URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/airavoto-demo-screenshot.png" },
     ],
+    links: [{ rel: "canonical", href: URL }],
   }),
   component: RoadmapPage,
 });

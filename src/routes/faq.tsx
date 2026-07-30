@@ -5,15 +5,26 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section, SectionHeading } from "@/components/site/primitives";
 
+const TITLE = "FAQ — Airavoto Gaming POS";
+const DESCRIPTION = "Frequently asked questions about Airavoto Gaming POS — setup, pricing, features, security and more.";
+const URL = "https://airavotogaming.com/faq";
+
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Airavoto Gaming POS" },
-      {
-        name: "description",
-        content: "Frequently asked questions about Airavoto Gaming POS — setup, pricing, features, security and more.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "/airavoto-demo-screenshot.png" },
+      { property: "og:url", content: URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "/airavoto-demo-screenshot.png" },
     ],
+    links: [{ rel: "canonical", href: URL }],
   }),
   component: FaqPage,
 });
