@@ -245,10 +245,10 @@ function Index() {
         {/* Center spotlight behind headline */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2"
+          className="pointer-events-none absolute left-1/2 top-[34%] -translate-x-1/2 -translate-y-1/2 sm:top-[38%]"
         >
           <div
-            className="h-[520px] w-[900px] animate-spotlight-pulse rounded-full blur-[90px]"
+            className="h-[280px] w-[340px] animate-spotlight-pulse rounded-full blur-[60px] sm:h-[400px] sm:w-[620px] sm:blur-[75px] lg:h-[520px] lg:w-[900px] lg:blur-[90px]"
             style={{
               background:
                 "radial-gradient(closest-side, oklch(0.85 0.06 290/0.16), transparent 100%)",
