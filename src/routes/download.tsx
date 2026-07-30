@@ -313,7 +313,6 @@ function DownloadPage() {
             </div>
           ))}
         </div>
-        <SetupForm />
       </Section>
 
       {/* System requirements */}
