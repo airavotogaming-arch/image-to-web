@@ -339,16 +339,32 @@ function Index() {
           title="Your whole gaming center, one panel"
           subtitle="Seat occupancy, walk-ins, timers, food orders, payments and reports — live in a single admin dashboard."
         />
-        <div className="mt-12 flex justify-center">
-          <a
-            href="https://demotestposairavoto.onrender.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-white/90"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-            Try Live Demo
-          </a>
+        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-soft)]">
+          <div className="flex items-center gap-2 border-b border-border bg-surface px-4 py-3">
+            <div className="flex gap-1.5">
+              <span className="size-3 rounded-full bg-red-500/70" />
+              <span className="size-3 rounded-full bg-yellow-500/70" />
+              <span className="size-3 rounded-full bg-green-500/70" />
+            </div>
+            <span className="flex-1 rounded-md bg-black/20 px-3 py-1 text-center text-xs text-muted-foreground">
+              demotestposairavoto.onrender.com
+            </span>
+            <a
+              href="https://demotestposairavoto.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-muted-foreground transition hover:text-foreground"
+            >
+              ↗
+            </a>
+          </div>
+          <iframe
+            src="https://demotestposairavoto.onrender.com/"
+            title="Airavoto Gaming POS live demo"
+            className="w-full"
+            style={{ height: "640px", border: "none", display: "block" }}
+            allow="fullscreen"
+          />
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {glanceCards.map(({ icon: Icon, title, body }) => (
