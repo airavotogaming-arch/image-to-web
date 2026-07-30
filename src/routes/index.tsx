@@ -444,35 +444,35 @@ function Index() {
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
             <h2 className="max-w-md text-3xl font-semibold tracking-tight text-gradient sm:text-4xl">
-              Monitor progress faster than ever.
+              Monitor every seat in real time.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Real-time reporting rolls every task up into a single view of where the launch
-              actually stands — no spreadsheets, no chasing.
+              Occupancy, time left and revenue roll up into one honest view of the floor — no
+              registers, no spreadsheets, no guesswork.
             </p>
             <div className="mt-8 grid max-w-sm grid-cols-2 gap-6">
               <div>
                 <div className="text-3xl font-semibold tracking-tight">100%</div>
-                <p className="mt-1 text-xs text-muted-foreground">Visibility across every team</p>
+                <p className="mt-1 text-xs text-muted-foreground">Visibility across every seat</p>
               </div>
               <div>
                 <div className="text-3xl font-semibold tracking-tight">10X</div>
-                <p className="mt-1 text-xs text-muted-foreground">Faster weekly reporting</p>
+                <p className="mt-1 text-xs text-muted-foreground">Faster daily closing</p>
               </div>
             </div>
             <a
-              href="#pricing"
+              href="#download"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
             >
-              Get started <ArrowRight className="size-4" />
+              Download free <ArrowRight className="size-4" />
             </a>
           </div>
           <div className="panel p-6">
             {[
-              { label: "Discovery", value: 100 },
-              { label: "Design system", value: 82 },
-              { label: "Implementation", value: 64 },
-              { label: "QA & launch", value: 28 },
+              { label: "PC seats occupied", value: 100 },
+              { label: "PS5 seats occupied", value: 82 },
+              { label: "VR & simulators", value: 64 },
+              { label: "Food orders fulfilled", value: 28 },
             ].map((row) => (
               <div key={row.label} className="border-b border-border/60 py-4 last:border-0">
                 <div className="flex items-center justify-between text-sm">
@@ -492,8 +492,12 @@ function Index() {
       </Section>
 
       {/* Blog */}
-      <Section id="blog">
-        <SectionHeading eyebrow="Blog" title="News, insights and more" />
+      <Section id="tech">
+        <SectionHeading
+          eyebrow="Technology"
+          title="Built with a modern, reliable stack"
+          subtitle="Full-stack TypeScript for dependable, type-safe operations at any scale."
+        />
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {posts.map((p) => (
             <article key={p.title} className="panel flex flex-col p-6">
@@ -509,15 +513,15 @@ function Index() {
 
       {/* Team */}
       <Section>
-        <SectionHeading eyebrow="Team" title="Our Team Members" />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((m) => (
-            <div key={m.name} className="panel overflow-hidden">
-              <div className="h-44 w-full bg-[radial-gradient(120%_100%_at_50%_0%,var(--surface-2),var(--background))]" />
-              <div className="p-5">
-                <h3 className="text-sm font-medium tracking-tight">{m.name}</h3>
-                <p className="mt-1 text-xs text-muted-foreground">{m.role}</p>
-              </div>
+        <SectionHeading
+          eyebrow="Schema"
+          title="A 16-table operations schema"
+          subtitle="Every aspect of gaming center operations modelled for data integrity and flexibility."
+        />
+        <div className="mt-12 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {schema.map((t) => (
+            <div key={t} className="panel px-5 py-4 text-sm text-foreground/85">
+              {t}
             </div>
           ))}
         </div>
@@ -526,20 +530,20 @@ function Index() {
       {/* Worldwide */}
       <Section>
         <SectionHeading
-          eyebrow="Global"
-          title="Connecting Worldwide Teams"
-          subtitle="From two-person studios to distributed enterprises across 40+ countries."
+          eyebrow="Results"
+          title="Built for busy gaming floors"
+          subtitle="From a 10-seat cafe to a multi-room esports arena, on the same clean surface."
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          <Stat value="100%" label="Cloud-native and available anywhere" />
-          <Stat value="50%" label="Faster handoffs between timezones" />
-          <Stat value="90%" label="Of teams renew after their first launch" />
+          <Stat value="0%" label="Hidden charges, ever" />
+          <Stat value="50%" label="Less time spent at the billing counter" />
+          <Stat value="99%" label="Accuracy on session timing and billing" />
         </div>
       </Section>
 
       {/* Testimonials */}
       <Section>
-        <SectionHeading eyebrow="Testimonials" title="What Our Users Say" />
+        <SectionHeading eyebrow="Testimonials" title="What Gaming Centers Say" />
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {testimonials.map((t) => (
             <figure key={t.name} className="panel flex flex-col p-6">
@@ -560,7 +564,7 @@ function Index() {
       </Section>
 
       {/* FAQ */}
-      <Section id="contact">
+      <Section id="faq">
         <SectionHeading eyebrow="FAQ" title="Frequently Asked Questions" />
         <div className="mx-auto mt-12 grid max-w-4xl gap-x-6 md:grid-cols-2">
           {[faqs.slice(0, 3), faqs.slice(3)].map((group, gi) => (
@@ -591,22 +595,23 @@ function Index() {
           <div className="relative">
             <Eyebrow>Get Started</Eyebrow>
             <h2 className="mx-auto mt-5 max-w-xl text-3xl font-semibold tracking-tight text-gradient sm:text-5xl">
-              Start your 7-day free trial
+              Download Airavoto Gaming POS free
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-              Bring your next launch into Suprema today. No credit card, no setup calls.
+              The complete gaming center management system. No payment, no trial limits, no
+              hidden charges.
             </p>
             <a
-              href="#"
+              href="#download"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground"
             >
-              Get started <ArrowRight className="size-4" />
+              <Download className="size-4" /> Download free
             </a>
             <div className="mt-14 grid gap-4 sm:grid-cols-4">
-              <Stat value="76%" label="Faster planning cycles" />
-              <Stat value="12M+" label="Tasks completed" />
-              <Stat value="600+" label="Teams onboard" />
-              <Stat value="20+" label="Native integrations" />
+              <Stat value="₹0" label="Total cost" />
+              <Stat value="16" label="Operational modules" />
+              <Stat value="4+" label="Device types supported" />
+              <Stat value="∞" label="Seats and bookings" />
             </div>
           </div>
         </div>
