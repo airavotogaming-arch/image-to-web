@@ -339,15 +339,24 @@ function Index() {
           title="Your whole gaming center, one panel"
           subtitle="Seat occupancy, walk-ins, timers, food orders, payments and reports — live in a single admin dashboard."
         />
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-surface p-2 shadow-[var(--shadow-soft)]">
+        <div className="relative mt-12 overflow-hidden rounded-2xl border border-border bg-surface p-2 shadow-[var(--shadow-soft)]">
           <img
-            src={posShot}
-            alt="Airavoto Gaming POS seat management dashboard showing PS5 and PC occupancy, walk-in list and booking table"
+            src="/airavoto-demo-screenshot.png"
+            alt="Airavoto Gaming POS seat management dashboard"
             loading="lazy"
-            width={1366}
-            height={768}
             className="w-full rounded-xl"
           />
+          <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/40">
+            <a
+              href="https://demotestposairavoto.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-white/90"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              Try Live Demo
+            </a>
+          </div>
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {glanceCards.map(({ icon: Icon, title, body }) => (
