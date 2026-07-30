@@ -27,7 +27,7 @@ import { HeroFloaters } from "@/components/site/HeroFloaters";
 import { HeroLights } from "@/components/site/HeroLights";
 import { Eyebrow, Section, SectionHeading, Stat } from "@/components/site/primitives";
 import heroGlow from "@/assets/hero-glow.jpg";
-import posShot from "@/assets/airavoto-pos.png.asset.json";
+import posShot from "@/assets/airavoto-pos.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -335,7 +335,7 @@ function Index() {
         />
         <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-surface p-2 shadow-[var(--shadow-soft)]">
           <img
-            src={posShot.url}
+            src={posShot}
             alt="Airavoto Gaming POS seat management dashboard showing PS5 and PC occupancy, walk-in list and booking table"
             loading="lazy"
             width={1366}
