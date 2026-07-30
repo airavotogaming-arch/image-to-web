@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect, useRef } from "react";
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
@@ -53,8 +53,30 @@ export function Section({
   children: ReactNode;
   className?: string;
 }) {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("in-view");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.08 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id={id} className={`border-t border-border/60 py-20 sm:py-28 ${className}`}>
+    <section
+      ref={ref}
+      id={id}
+      className={`reveal border-t border-border/60 py-20 sm:py-28 ${className}`}
+    >
       <div className="mx-auto w-full max-w-6xl px-5">{children}</div>
     </section>
   );
