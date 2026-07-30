@@ -1,4 +1,6 @@
 export function HeroLights() {
+  // `mobile: false` particles are hidden below the sm breakpoint so the
+  // starfield stays as sparse as the reference on small screens.
   const particles = [
     { left: "8%", top: "12%", size: 3, color: "oklch(0.95 0 0 / 0.85)", opacity: 0.55, tx: "14px", ty: "-18px", dur: 16, dur2: 7, delay: -2 },
     { left: "22%", top: "8%", size: 2, color: "oklch(0.82 0.09 290 / 0.8)", opacity: 0.45, tx: "-10px", ty: "-12px", dur: 20, dur2: 9, delay: -5 },
