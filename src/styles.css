@@ -215,8 +215,14 @@
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
 @theme {
   --animate-spotlight-pulse: spotlight-pulse 8s ease-in-out infinite;
   --animate-particle-drift: particle-drift 16s ease-in-out infinite alternate;
   --animate-particle-twinkle: particle-twinkle 8s ease-in-out infinite alternate;
+  --animate-float: float 5s ease-in-out infinite;
 }

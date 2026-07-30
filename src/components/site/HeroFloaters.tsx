@@ -41,7 +41,7 @@ export function HeroFloaters() {
     >
       {/* left top — active session */}
       <Card
-        className="left-[4%] top-[8%] w-64 opacity-70"
+        className="left-[4%] top-[8%] w-64 opacity-70 animate-[float_5s_ease-in-out_infinite]"
         style={{ transform: "perspective(1200px) rotateY(14deg) rotateZ(-3deg)" }}
       >
         <div className="flex items-center gap-2 text-xs font-medium">
@@ -64,7 +64,7 @@ export function HeroFloaters() {
 
       {/* left middle — walk-in queue */}
       <Card
-        className="left-[-2%] top-[36%] w-72 opacity-60"
+        className="left-[-2%] top-[36%] w-72 opacity-60 animate-[float_6s_ease-in-out_1s_infinite]"
         style={{ transform: "perspective(1200px) rotateY(16deg) rotateZ(-2deg)" }}
       >
         <div className="flex items-center justify-between text-[11px]">
@@ -95,7 +95,7 @@ export function HeroFloaters() {
 
       {/* left bottom — revenue summary */}
       <Card
-        className="bottom-[2%] left-[2%] w-72 opacity-55"
+        className="bottom-[2%] left-[2%] w-72 opacity-55 animate-[float_7s_ease-in-out_2s_infinite]"
         style={{ transform: "perspective(1200px) rotateY(14deg) rotateZ(-6deg)" }}
       >
         <div className="flex items-center justify-between">
@@ -124,7 +124,7 @@ export function HeroFloaters() {
 
       {/* right top — seat occupancy */}
       <Card
-        className="right-[3%] top-[6%] w-56 opacity-70"
+        className="right-[3%] top-[6%] w-56 opacity-70 animate-[float_5.5s_ease-in-out_0.5s_infinite]"
         style={{ transform: "perspective(1200px) rotateY(-14deg) rotateZ(3deg)" }}
       >
         <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
@@ -158,7 +158,7 @@ export function HeroFloaters() {
 
       {/* right middle — session timers */}
       <Card
-        className="right-[2%] top-[40%] w-64 opacity-65"
+        className="right-[2%] top-[40%] w-64 opacity-65 animate-[float_6.5s_ease-in-out_1.5s_infinite]"
         style={{ transform: "perspective(1200px) rotateY(-16deg) rotateZ(6deg)" }}
       >
         <div className="flex items-center gap-2 text-xs font-medium">
@@ -183,7 +183,7 @@ export function HeroFloaters() {
 
       {/* right bottom — food orders */}
       <Card
-        className="bottom-[3%] right-[1%] w-72 opacity-55"
+        className="bottom-[3%] right-[1%] w-72 opacity-55 animate-[float_7.5s_ease-in-out_2.5s_infinite]"
         style={{ transform: "perspective(1200px) rotateY(-12deg) rotateZ(4deg)" }}
       >
         <div className="flex items-center gap-2 text-xs font-medium">
