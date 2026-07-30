@@ -58,7 +58,7 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 px-4">
-      <nav className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-border/70 bg-[oklch(0.11_0_0/0.90)] backdrop-blur-xl">
+      <nav className="mx-auto max-w-4xl rounded-3xl border border-border/70 bg-[oklch(0.11_0_0/0.90)] backdrop-blur-xl">
 
         {/* Top bar */}
         <div className="flex items-center justify-between p-2.5 pl-3">
