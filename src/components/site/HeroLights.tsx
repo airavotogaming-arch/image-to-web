@@ -21,12 +21,12 @@ export function HeroLights() {
       {particles.map((p, i) => (
         <span
           key={i}
-          className="absolute rounded-full"
+          className={`absolute rounded-full ${p.mobile ? "" : "hidden sm:block"}`}
           style={{
             left: p.left,
             top: p.top,
-            width: p.size,
-            height: p.size,
+            width: `min(${p.size}px, ${p.size}px)`,
+            height: `min(${p.size}px, ${p.size}px)`,
             backgroundColor: p.color,
             filter: "blur(1.5px)",
             opacity: p.opacity,
