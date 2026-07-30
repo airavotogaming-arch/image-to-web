@@ -308,6 +308,20 @@ function DownloadPage() {
           title="Up and running in minutes"
           subtitle="Most gaming centers download, configure their seats and start billing sessions the same day."
         />
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          {steps.map(({ n, icon: Icon, title, body }) => (
+            <div key={n} className="panel p-6">
+              <div className="flex items-start justify-between">
+                <span className="flex size-9 items-center justify-center rounded-xl border border-border bg-surface-2">
+                  <Icon className="size-4 text-foreground/70" />
+                </span>
+                <span className="font-mono text-3xl font-bold text-foreground/10">{n}</span>
+              </div>
+              <h3 className="mt-4 text-sm font-semibold tracking-tight">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+            </div>
+          ))}
+        </div>
         <SetupForm />
       </Section>
 
