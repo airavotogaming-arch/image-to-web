@@ -127,16 +127,7 @@ function SetupForm() {
   return (
     <div className="mx-auto mt-14 max-w-2xl">
       <div className="panel p-8">
-        <div className="flex items-center gap-3">
-          <span className="flex size-9 items-center justify-center rounded-xl border border-border bg-surface-2">
-            <Sparkles className="size-4 text-foreground/70" />
-          </span>
-          <div>
-            <div className="text-sm font-semibold">Set up your gaming center</div>
-            <div className="text-[11px] text-muted-foreground">Fill in your details — takes 30 seconds</div>
-          </div>
-        </div>
-        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Gaming Center Name</label>
