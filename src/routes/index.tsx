@@ -421,51 +421,14 @@ function Index() {
 
           {/* Boy illustration pointing left at the card */}
           <div className="hidden shrink-0 md:block">
-            <svg
-              width="220"
-              height="340"
-              viewBox="0 0 220 340"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              {/* Head */}
-              <circle cx="130" cy="48" r="28" stroke="white" strokeWidth="2.5" fill="none" />
-              {/* Hair */}
-              <path d="M104 42 Q106 20 130 18 Q154 20 156 42" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              {/* Eyes */}
-              <circle cx="121" cy="45" r="3" fill="white" />
-              <circle cx="139" cy="45" r="3" fill="white" />
-              {/* Smile */}
-              <path d="M120 57 Q130 65 140 57" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
-              {/* Neck */}
-              <line x1="130" y1="76" x2="130" y2="96" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-              {/* Body / torso */}
-              <path d="M95 96 Q105 92 130 92 Q155 92 165 96 L168 170 H92 Z" stroke="white" strokeWidth="2.5" fill="none" strokeLinejoin="round" />
-              {/* T-shirt collar */}
-              <path d="M115 96 Q130 108 145 96" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
-              {/* LEFT arm — raised, pointing left toward card */}
-              <path d="M95 110 Q72 105 48 98 Q30 92 12 88" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              {/* Pointing finger */}
-              <path d="M12 88 L2 82" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-              {/* Curled fingers hint */}
-              <path d="M12 88 Q8 94 10 98" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round" />
-              <path d="M12 88 Q16 96 14 100" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round" />
-              {/* RIGHT arm — relaxed down */}
-              <path d="M165 110 Q178 130 176 158 Q175 168 172 175" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              {/* Legs */}
-              <path d="M92 170 L85 260 L80 310" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              <path d="M168 170 L175 260 L180 310" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              {/* Shoes */}
-              <path d="M80 310 Q70 315 62 312 Q58 308 65 305 L80 310" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round" />
-              <path d="M180 310 Q190 315 198 312 Q202 308 195 305 L180 310" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round" />
-              {/* Trouser line */}
-              <line x1="130" y1="170" x2="128" y2="240" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 3" />
-              {/* Speech bubble */}
-              <rect x="60" y="8" width="120" height="36" rx="10" stroke="white" strokeWidth="1.8" fill="none" />
-              <path d="M88 44 L80 54 L96 44" stroke="white" strokeWidth="1.8" fill="none" strokeLinejoin="round" />
-              <text x="120" y="31" textAnchor="middle" fill="white" fontSize="11" fontFamily="Geist, sans-serif" fontWeight="500">It's totally free!</text>
-            </svg>
+            <img
+              src="/boy-pointing.png"
+              alt="Boy pointing at the download card"
+              width={300}
+              height={300}
+              style={{ filter: "invert(1)" }}
+              className="select-none"
+            />
           </div>
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground">
