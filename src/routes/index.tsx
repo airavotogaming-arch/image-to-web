@@ -283,7 +283,25 @@ function Index() {
             <ArrowRight className="size-4 text-muted-foreground" />
           </a>
           <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-7xl md:text-[5.2rem]">
-            Airavoto Gaming POS — free, complete, no hidden charges.
+            Airavoto Gaming POS —{" "}
+            <span className="relative inline-block whitespace-nowrap">
+              free
+              <svg
+                viewBox="0 0 80 10"
+                preserveAspectRatio="none"
+                className="absolute -bottom-1 left-0 w-full"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 7 Q20 2 40 6 Q60 10 78 4"
+                  stroke="var(--primary)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            , complete, no hidden charges.
           </h1>
           <p className="mx-auto mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             Run every seat, session, booking, order and expense in your gaming center from one
