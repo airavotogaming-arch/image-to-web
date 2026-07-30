@@ -5,7 +5,7 @@ import { MessageCircle, Instagram, FileText, ChevronDown, Menu, X } from "lucide
 const links = [
   { label: "Home", to: "/" as const },
   { label: "Features", to: "/features" as const },
-  { label: "Download", to: "/download" as const },
+  { label: "Blog", to: "/blog" as const },
   { label: "FAQ", to: "/faq" as const },
 ];
 
