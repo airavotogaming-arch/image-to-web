@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: "Do I need internet to run it?",
-    a: "No. Once installed, the software runs entirely on your local machine or server. An internet connection is only needed during the initial download and npm install.",
+    a: "Mostly no — the POS runs on your local machine or server without internet. However, an active internet connection is required to sync live seat availability to the Airavoto Gaming web platform in real time. Without it, the live availability feature will be unavailable to your customers online.",
   },
   {
     q: "Can I run it on multiple counters?",
