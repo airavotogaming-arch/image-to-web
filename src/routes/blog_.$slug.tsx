@@ -13,7 +13,7 @@ export const Route = createFileRoute("/blog_/$slug")({
       };
     }
     const title = `${post.title} — Airavoto Blog`;
-    const url = `https://airavoto.com/blog/${post.slug}`;
+    const url = `https://airavotogaming.com/blog/${post.slug}`;
     return {
       meta: [
         { title },
