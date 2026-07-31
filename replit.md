@@ -1,37 +1,51 @@
-# Airavoto Gaming POS — Landing Page
+# Airavoto Gaming POS — Marketing Site
 
-A marketing landing page for **Airavoto Gaming POS**, a free gaming center management software. Built with Lovable.
+A marketing/landing site for **Airavoto Gaming POS**, a free gaming center management software. Built with TanStack Start, React 19, Tailwind CSS v4, and shadcn/ui components.
 
 ## Stack
 
-- **Framework**: React 19 + TanStack Start (SSR-capable)
-- **Routing**: TanStack Router (file-based)
-- **Styling**: Tailwind CSS v4 + shadcn/ui components
-- **Build tool**: Vite 8 via `@lovable.dev/vite-tanstack-config`
-- **Package manager**: Bun
+- **Framework:** TanStack Start (SSR) + TanStack Router (file-based routing)
+- **UI:** React 19, Tailwind CSS v4, shadcn/ui (Radix UI primitives)
+- **Build tool:** Vite 8 via `@lovable.dev/vite-tanstack-config`
+- **Runtime:** Bun
+- **Originally built with:** [Lovable](https://lovable.dev)
 
 ## Running the project
 
 ```sh
-bun install       # install dependencies
-bun run dev       # start dev server on port 5000
+bun install
+bun run dev
 ```
 
-The dev server runs on `http://0.0.0.0:5000`.
+The dev server listens on **port 5000**.
 
 ## Project structure
 
 ```
 src/
-  routes/         # File-based TanStack Router pages
+  routes/         # File-based routes (TanStack Router)
   components/
-    site/         # Page-level components (Navbar, Footer, Hero effects)
-    ui/           # shadcn/ui primitives
-  assets/         # Images and asset manifests
-  styles.css      # Global Tailwind styles
-  server.ts       # SSR error wrapper (Nitro entry)
+    site/         # Landing page components (Navbar, Footer, Hero, etc.)
+    ui/           # shadcn/ui component library
+  lib/            # Utilities and blog post data
+  assets/         # Images used in the site
 ```
+
+## Key pages
+
+| Route | Description |
+|---|---|
+| `/` | Home / hero landing page |
+| `/features` | Feature breakdown |
+| `/download` | Download CTA page |
+| `/blog` | Blog index |
+| `/blog/:slug` | Individual blog post |
+| `/faq` | FAQ accordion |
+| `/roadmap` | Product roadmap |
+| `/changelog` | Release changelog |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
 
 ## User preferences
 
-<!-- Add remembered preferences here -->
+<!-- Add user preferences here as you learn them -->
