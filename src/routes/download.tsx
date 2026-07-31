@@ -280,7 +280,7 @@ function DownloadPage() {
               ))}
             </ul>
             <a
-              href="#"
+              href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.0/Airavoto.Gaming.POS_1.0.0_x64-setup.exe"
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               <Download className="size-4" /> Download free
@@ -376,7 +376,7 @@ function DownloadPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://github.com/airavoto/gaming-pos/releases/latest"
+                href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.0/Airavoto.Gaming.POS_1.0.0_x64-setup.exe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"

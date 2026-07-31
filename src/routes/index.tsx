@@ -458,7 +458,7 @@ function Index() {
                 ))}
               </ul>
               <a
-                href="#"
+                href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.0/Airavoto.Gaming.POS_1.0.0_x64-setup.exe"
                 className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90 ${
                   p.featured
                     ? "bg-primary text-primary-foreground"
