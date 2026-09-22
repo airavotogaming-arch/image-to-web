@@ -12,6 +12,9 @@ export const Route = createFileRoute("/privacy")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { name: "author", content: "Ujwal Guru" },
+      { name: "creator", content: "Ujwal Guru" },
+      { name: "publisher", content: "Airavoto Gaming" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },

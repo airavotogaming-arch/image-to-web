@@ -38,6 +38,10 @@ export const Route = createFileRoute("/")({
         content:
           "Download Airavoto Gaming POS free — complete gaming center management with live session tracking, bookings, food, inventory and finance. No hidden charges.",
       },
+      { name: "author", content: "Ujwal Guru" },
+      { name: "creator", content: "Ujwal Guru" },
+      { name: "publisher", content: "Airavoto Gaming" },
+      { name: "keywords", content: "Airavoto Gaming POS, gaming cafe POS, gaming center management, gaming lounge software, session tracking, bookings, inventory, billing" },
       { property: "og:title", content: "Airavoto Gaming POS — Free Gaming Center Software" },
       {
         property: "og:description",

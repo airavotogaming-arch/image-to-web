@@ -25,6 +25,10 @@ export const Route = createFileRoute("/download")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { name: "author", content: "Ujwal Guru" },
+      { name: "creator", content: "Ujwal Guru" },
+      { name: "publisher", content: "Airavoto Gaming" },
+      { name: "keywords", content: "download Airavoto Gaming POS, gaming cafe POS download, gaming center software, Windows POS" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
