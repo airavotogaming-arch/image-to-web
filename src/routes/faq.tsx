@@ -38,6 +38,10 @@ const categories = [
         a: "Yes. The complete software is free to download with every module unlocked — no trial period, no hidden charges and no locked features. You download it once and use it forever.",
       },
       {
+        q: "How can Airavoto offer the gaming café POS for free?",
+        a: "Airavoto supports the free POS through relevant advertising on the Airavoto Café website. With your permission, the platform can use real-time information from your gaming café — such as availability, offers and location — to help users discover where to play. This advertising model helps us keep the core POS tools free for gaming café operators.",
+      },
+      {
         q: "Who is this software for?",
         a: "Airavoto Gaming POS is built for gaming centers of any size — from a 5-seat cafe to a multi-room esports arena with PC, PS5, Xbox, VR rigs, racing simulators and snooker tables.",
       },
