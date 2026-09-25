@@ -7,6 +7,7 @@ const links = [
   { label: "Features", to: "/features" as const },
   { label: "Blog", to: "/blog" as const },
   { label: "FAQ", to: "/faq" as const },
+  { label: "Troubleshooting", to: "/troubleshooting" as const },
 ];
 
 const contactOptions = [

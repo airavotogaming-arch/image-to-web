@@ -25,6 +25,7 @@ const cols = [
     items: [
       { label: "FAQ", to: "/faq" },
       { label: "Setup guide", to: "/download" },
+      { label: "Troubleshooting", to: "/troubleshooting" },
       { label: "Changelog", to: "/changelog" },
       { label: "Roadmap", to: "/roadmap" },
     ],
@@ -51,7 +52,7 @@ function FooterLink({ label, to }: { label: string; to: string }) {
   }
   return (
     <Link
-      to={to as "/features" | "/download" | "/" | "/faq" | "/changelog" | "/roadmap" | "/privacy" | "/terms"}
+      to={to as "/features" | "/download" | "/" | "/faq" | "/changelog" | "/roadmap" | "/privacy" | "/terms" | "/troubleshooting"}
       className="text-sm text-foreground/80 hover:text-foreground"
     >
       {label}
