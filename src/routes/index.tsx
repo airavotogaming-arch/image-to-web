@@ -461,16 +461,31 @@ function Index() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.0/Airavoto.Gaming.POS_1.0.0_x64-setup.exe"
-                className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90 ${
-                  p.featured
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border bg-surface-2 text-foreground"
-                }`}
-              >
-                Download now
-              </a>
+              <div className="mt-8 grid gap-2.5">
+                <a
+                  href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.1/Airavoto.Gaming.POS_1.0.1_x64-setup.exe"
+                  className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90 ${
+                    p.featured
+                      ? "bg-primary text-primary-foreground"
+                      : "border border-border bg-surface-2 text-foreground"
+                  }`}
+                >
+                  Download for Windows
+                </a>
+                <a
+                  href="ms-windows-store://pdp/?productid=XP89GDBJ919V61"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface-2 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/30 hover:bg-surface-3"
+                  title="Get Airavoto Gaming POS from Microsoft Store"
+                >
+                  <span aria-hidden="true" className="grid size-3.5 grid-cols-2 grid-rows-2 gap-px">
+                    <span className="bg-[#f25022]" />
+                    <span className="bg-[#7fba00]" />
+                    <span className="bg-[#00a4ef]" />
+                    <span className="bg-[#ffb900]" />
+                  </span>
+                  Get it from Microsoft Store
+                </a>
+              </div>
             </div>
           ))}
 

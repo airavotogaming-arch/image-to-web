@@ -283,12 +283,27 @@ function DownloadPage() {
                 </li>
               ))}
             </ul>
-            <a
-              href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.0/Airavoto.Gaming.POS_1.0.0_x64-setup.exe"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              <Download className="size-4" /> Download free
-            </a>
+            <div className="mt-8 grid gap-2.5">
+              <a
+                href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.1/Airavoto.Gaming.POS_1.0.1_x64-setup.exe"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                <Download className="size-4" /> Download for Windows
+              </a>
+              <a
+                href="ms-windows-store://pdp/?productid=XP89GDBJ919V61"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface-2 px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-foreground/30 hover:bg-surface-3"
+                title="Get Airavoto Gaming POS from Microsoft Store"
+              >
+                <span aria-hidden="true" className="grid size-4 grid-cols-2 grid-rows-2 gap-px">
+                  <span className="bg-[#f25022]" />
+                  <span className="bg-[#7fba00]" />
+                  <span className="bg-[#00a4ef]" />
+                  <span className="bg-[#ffb900]" />
+                </span>
+                Get it from Microsoft Store
+              </a>
+            </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
               <ShieldCheck className="size-3.5" /> No payment required · No account needed
             </div>
