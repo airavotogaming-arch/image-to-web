@@ -15,9 +15,9 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Eyebrow, Section, SectionHeading } from "@/components/site/primitives";
 
-const TITLE = "Download — Airavoto Gaming POS";
+const TITLE = "Free Gaming Café POS Software for Windows — Airavoto Gaming POS";
 const DESCRIPTION =
-  "Download Airavoto Gaming POS free — complete gaming center software with every module unlocked. Self-host on your own PC or server.";
+  "Download free gaming café POS software for Windows. Airavoto Gaming POS handles PC café billing, bookings, sessions, inventory, reports and gaming center management.";
 const URL = "https://airavotogaming.com/download";
 
 export const Route = createFileRoute("/download")({
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/download")({
       { name: "author", content: "Ujwal Guru" },
       { name: "creator", content: "Ujwal Guru" },
       { name: "publisher", content: "Airavoto Gaming" },
-      { name: "keywords", content: "download Airavoto Gaming POS, gaming cafe POS download, gaming center software, Windows POS" },
+      { name: "keywords", content: "free gaming cafe POS software, gaming center management software, PC cafe billing software, gaming cafe booking system, Windows POS download, Airavoto Gaming POS setup" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -98,6 +98,48 @@ const faqs = [
   {
     q: "Is my data safe?",
     a: "All data stays on your machine — nothing is sent to any external server. Staff accounts use bcrypt-hashed passwords and role-based access control.",
+  },
+];
+
+const setupGuide = [
+  {
+    title: "Install Airavoto Gaming POS",
+    body: "Choose the Microsoft Store installation for the simplest Windows setup, or download the standalone Windows installer. Allow the installer to finish before opening the POS.",
+  },
+  {
+    title: "Create your admin profile",
+    body: "On first launch, enter your gaming café name, city and admin details. Keep the admin password private because it controls pricing, reports and staff access.",
+  },
+  {
+    title: "Configure platforms and seats",
+    body: "Open Settings and add your PC, PS5, Xbox, VR or custom stations. Set seat numbers, opening hours, pricing rules and payment methods before taking bookings.",
+  },
+  {
+    title: "Start sessions and manage the café",
+    body: "Use the Dashboard to start walk-in sessions, accept advance bookings, add food orders and complete payments. Reports and analytics update from your real POS activity.",
+  },
+];
+
+const troubleshooting = [
+  {
+    q: "The Microsoft Store button does not open",
+    a: "The Microsoft Store link opens the Store app on Windows. If you are viewing the website on a phone or Mac, use the Windows installer button instead or open the page on a Windows 10 or Windows 11 computer.",
+  },
+  {
+    q: "Windows shows a security warning during installation",
+    a: "Download the installer again from the official Airavoto source and confirm that the file is the latest release. If Windows SmartScreen appears, choose More info and verify that the application is Airavoto Gaming POS before continuing.",
+  },
+  {
+    q: "The POS does not open after installation",
+    a: "Restart Windows and launch Airavoto Gaming POS again. Check that the installation completed and that Windows Defender or another security tool did not quarantine the application. If the issue remains, reinstall the latest release.",
+  },
+  {
+    q: "Other counter computers cannot connect",
+    a: "Start the POS on the main counter computer, keep it on the same local network, and use that computer's local IP address from the other terminals. Check Windows Firewall if the local dashboard is unreachable.",
+  },
+  {
+    q: "My old data is not visible after an update",
+    a: "Do not delete your existing application data or database. Updates should use the same local data location. Close the POS, confirm you are opening the new installation, and restore your latest backup before contacting support.",
   },
 ];
 
@@ -345,6 +387,28 @@ function DownloadPage() {
         </div>
       </Section>
 
+      {/* Setup guide */}
+      <Section>
+        <SectionHeading
+          eyebrow="Setup guide"
+          title="Set up your gaming café POS step by step"
+          subtitle="Follow these four steps to install the Windows POS, configure your gaming stations and start managing sessions."
+        />
+        <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+          {setupGuide.map((item, index) => (
+            <article key={item.title} className="panel p-6">
+              <div className="flex items-center gap-3">
+                <span className="flex size-9 items-center justify-center rounded-xl border border-border bg-surface-2 font-mono text-xs text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-sm font-semibold tracking-tight">{item.title}</h3>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
       {/* System requirements */}
       <Section>
         <SectionHeading
@@ -381,6 +445,20 @@ function DownloadPage() {
         </div>
       </Section>
 
+      {/* Troubleshooting */}
+      <Section>
+        <SectionHeading
+          eyebrow="Troubleshooting guide"
+          title="Common installation and Windows fixes"
+          subtitle="Quick answers for Microsoft Store installation, Windows security warnings, local networks and POS updates."
+        />
+        <div className="mx-auto mt-12 max-w-3xl space-y-3">
+          {troubleshooting.map((item) => (
+            <FaqItem key={item.q} q={item.q} a={item.a} />
+          ))}
+        </div>
+      </Section>
+
       {/* CTA */}
       <Section>
         <div className="relative overflow-hidden rounded-3xl border border-border bg-surface px-6 py-16 text-center">
@@ -395,7 +473,7 @@ function DownloadPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.0/Airavoto.Gaming.POS_1.0.0_x64-setup.exe"
+                href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.1/Airavoto.Gaming.POS_1.0.1_x64-setup.exe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
