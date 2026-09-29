@@ -325,26 +325,38 @@ function DownloadPage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 grid gap-2.5">
-              <a
-                href="ms-windows-store://pdp/?productid=XP89GDBJ919V61"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/80 bg-white px-6 py-3.5 text-sm font-semibold text-black shadow-sm transition-colors hover:bg-white/90"
-                title="Get Airavoto Gaming POS from Microsoft Store"
-              >
-                <span aria-hidden="true" className="grid size-4 grid-cols-2 grid-rows-2 gap-px">
-                  <span className="bg-[#f25022]" />
-                  <span className="bg-[#7fba00]" />
-                  <span className="bg-[#00a4ef]" />
-                  <span className="bg-[#ffb900]" />
+            <div className="mt-8 grid gap-3">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <span className="order-1 inline-flex w-fit items-center rounded-full border border-blue-300/30 bg-blue-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-blue-200 sm:order-2">
+                  Best for Windows 11
                 </span>
-                Get it from Microsoft Store
-              </a>
-              <a
-                href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.1/Airavoto.Gaming.POS_1.0.1_x64-setup.exe"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface-2 px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-foreground/30 hover:bg-surface-3"
-              >
-                <Download className="size-4" /> Download for Windows
-              </a>
+                <a
+                  href="ms-windows-store://pdp/?productid=XP89GDBJ919V61"
+                  className="order-2 inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-white/80 bg-white px-4 py-3.5 text-sm font-semibold text-black shadow-sm transition-colors hover:bg-white/90 sm:order-1 sm:px-6"
+                  title="Install Airavoto Gaming POS from Microsoft Store on Windows 11"
+                >
+                  <span aria-hidden="true" className="grid size-4 shrink-0 grid-cols-2 grid-rows-2 gap-px">
+                    <span className="bg-[#f25022]" />
+                    <span className="bg-[#7fba00]" />
+                    <span className="bg-[#00a4ef]" />
+                    <span className="bg-[#ffb900]" />
+                  </span>
+                  <span>Install from Microsoft Store</span>
+                </a>
+              </div>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <span className="order-1 inline-flex w-fit items-center rounded-full border border-emerald-300/30 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-200 sm:order-2">
+                  Windows 10 &amp; 11
+                </span>
+                <a
+                  href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.1/Airavoto.Gaming.POS_1.0.1_x64-setup.exe"
+                  className="order-2 inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-foreground/30 hover:bg-surface-3 sm:order-1 sm:px-6"
+                  title="Install Airavoto Gaming POS on Windows 10 or Windows 11"
+                >
+                  <Download className="size-4 shrink-0" />
+                  <span>Install now</span>
+                </a>
+              </div>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
               <ShieldCheck className="size-3.5" /> No payment required · No account needed
