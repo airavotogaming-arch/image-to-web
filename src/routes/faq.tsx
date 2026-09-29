@@ -42,6 +42,10 @@ const categories = [
         a: "Airavoto supports the free POS through relevant advertising on the Airavoto Café website. With your permission, the platform can use real-time information from your gaming café — such as availability, offers and location — to help users discover where to play. This advertising model helps us keep the core POS tools free for gaming café operators.",
       },
       {
+        q: "Who founded and built Airavoto Gaming POS?",
+        a: "Airavoto Gaming POS was founded and built by Ujwal Guru. Airavoto Gaming provides the platform as a management solution for gaming centers.",
+      },
+      {
         q: "Who is this software for?",
         a: "Airavoto Gaming POS is built for gaming centers of any size — from a 5-seat cafe to a multi-room esports arena with PC, PS5, Xbox, VR rigs, racing simulators and snooker tables.",
       },

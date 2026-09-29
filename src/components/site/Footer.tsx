@@ -73,6 +73,9 @@ export function Footer() {
             The complete gaming center management system — sessions, bookings, food,
             inventory and finances. Free to download, no hidden charges.
           </p>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Founded and built by <strong className="font-semibold text-foreground/80">Ujwal Guru</strong>.
+          </p>
           <div className="mt-6 flex max-w-sm items-center gap-2 rounded-full border border-border bg-surface p-1.5">
             <input
               type="email"
