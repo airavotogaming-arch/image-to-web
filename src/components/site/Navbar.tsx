@@ -14,8 +14,8 @@ const contactOptions = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    sub: "+91 86579 55764",
-    href: "https://wa.me/918657955764",
+    sub: "+91 96194 39207",
+    href: "https://wa.me/919619439207",
     color: "text-[oklch(0.72_0.18_150)]",
   },
   {

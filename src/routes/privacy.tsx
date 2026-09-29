@@ -84,7 +84,7 @@ Airavoto retains account, licensing, profile, and live-directory records for as 
   },
   {
     title: "10. Contact",
-    body: `Questions, correction requests, or privacy concerns can be sent to airavotogaming@gmail.com or +91 8657955764. You can also visit https://airavotogaming.com/contact.`,
+    body: `Questions, correction requests, or privacy concerns can be sent to airavotogaming@gmail.com or +91 9619439207. You can also visit https://airavotogaming.com/contact.`,
   },
 ];
 
