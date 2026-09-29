@@ -6,6 +6,7 @@ import {
   Download,
   HardDrive,
   Monitor,
+  Play,
   RefreshCw,
   ShieldCheck,
   Sparkles,
@@ -364,6 +365,41 @@ function DownloadPage() {
           </div>
         </div>
 
+        {/* tutorial preview */}
+        <div className="mx-auto mt-6 max-w-lg">
+          <a
+            href="https://youtu.be/Crw-KN67Zh4"
+            target="_blank"
+            rel="noreferrer"
+            className="group panel block overflow-hidden p-3 transition-colors hover:border-foreground/30"
+            aria-label="Watch the Airavoto Gaming POS setup and usage tutorial on YouTube"
+          >
+            <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-surface-2">
+              <img
+                src="/airavoto-pos-tutorial.jpg"
+                alt="Airavoto Gaming POS tutorial preview"
+                className="size-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/35">
+                <span className="flex size-14 items-center justify-center rounded-full bg-white text-black shadow-xl transition-transform group-hover:scale-110">
+                  <Play className="ml-1 size-6 fill-current" aria-hidden="true" />
+                </span>
+              </div>
+              <span className="absolute bottom-3 left-3 rounded-full bg-black/75 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
+                YouTube tutorial
+              </span>
+            </div>
+            <div className="flex items-center justify-between gap-4 px-2 pb-1 pt-4">
+              <div>
+                <div className="text-sm font-semibold">See how to use Airavoto POS</div>
+                <div className="mt-1 text-xs text-muted-foreground">Watch the quick setup and usage guide</div>
+              </div>
+              <span className="shrink-0 text-xs font-semibold text-foreground/70 transition-colors group-hover:text-foreground">
+                Watch video ↗
+              </span>
+            </div>
+          </a>
+        </div>
         {/* trust strip */}
         <div className="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground">
           {["Free lifetime updates", "No subscription", "No hidden charges", "All features unlocked", "Self-hosted"].map(
