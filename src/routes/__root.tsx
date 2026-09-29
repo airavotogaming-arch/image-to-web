@@ -84,6 +84,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "creator", content: "Ujwal Guru" },
       { name: "publisher", content: "Airavoto Gaming" },
       { name: "application-name", content: "Airavoto Gaming POS" },
+      { name: "keywords", content: "Airavoto POS, gaming center POS, gaming cafe management software, Ujwal Guru" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#7c3aed" },
+      { property: "og:url", content: "https://www.airavotogaming.com/" },
+      { property: "og:site_name", content: "Airavoto Gaming POS" },
+      { property: "og:locale", content: "en_IN" },
       { property: "og:title", content: "Airavoto Gaming POS — Free, Complete, No Hidden Charges" },
       { property: "og:description", content: "Run every seat, session, booking, food order, payment and report in your gaming center from one fast dashboard. Download free." },
       { property: "og:type", content: "website" },
@@ -92,6 +98,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@airavotogaming" },
       { name: "twitter:title", content: "Airavoto Gaming POS — Free, Complete, No Hidden Charges" },
       { name: "twitter:description", content: "Run every seat, session, booking, food order, payment and report in your gaming center from one fast dashboard. Download free." },
+      { name: "twitter:creator", content: "@airavotogaming" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.airavotogaming.com/#organization",
+              "name": "Airavoto Gaming POS",
+              "url": "https://www.airavotogaming.com/",
+              "logo": "https://www.airavotogaming.com/airavoto-logo.png",
+              "description": "Airavoto POS is gaming center management software founded and built by Ujwal Guru.",
+              "founder": { "@id": "https://www.airavotogaming.com/#ujwal-guru" },
+              "brand": { "@id": "https://www.airavotogaming.com/#brand" }
+            },
+            {
+              "@type": "Brand",
+              "@id": "https://www.airavotogaming.com/#brand",
+              "name": "Airavoto POS",
+              "url": "https://www.airavotogaming.com/"
+            },
+            {
+              "@type": "Person",
+              "@id": "https://www.airavotogaming.com/#ujwal-guru",
+              "name": "Ujwal Guru",
+              "jobTitle": "Founder and Builder",
+              "description": "Ujwal Guru is the founder and builder of Airavoto POS.",
+              "worksFor": { "@id": "https://www.airavotogaming.com/#organization" }
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.airavotogaming.com/#website",
+              "url": "https://www.airavotogaming.com/",
+              "name": "Airavoto Gaming POS",
+              "publisher": { "@id": "https://www.airavotogaming.com/#organization" },
+              "about": { "@id": "https://www.airavotogaming.com/#organization" }
+            }
+          ]
+        })
+      }
     ],
     links: [
       {
