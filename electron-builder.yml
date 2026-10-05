@@ -1,0 +1,22 @@
+appId: com.airavoto.gamingpos
+productName: Airavoto Gaming POS
+copyright: Copyright © 2026 Ujwal Guru
+asar: true
+files:
+  - desktop/**
+  - .output/**
+  - package.json
+mac:
+  category: public.app-category.business
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+dmg:
+  title: Airavoto Gaming POS
+  artifactName: Airavoto-Gaming-POS-${version}-${arch}.dmg
+  backgroundColor: "#09090b"
+  sign: false
+  writeUpdateInfo: false
+publish: null
