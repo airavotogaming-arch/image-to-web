@@ -29,7 +29,11 @@ export const Route = createFileRoute("/download")({
       { name: "author", content: "Ujwal Guru" },
       { name: "creator", content: "Ujwal Guru" },
       { name: "publisher", content: "Airavoto Gaming" },
-      { name: "keywords", content: "free gaming cafe POS software, gaming center management software, PC cafe billing software, gaming cafe booking system, Windows POS download, Airavoto Gaming POS setup" },
+      {
+        name: "keywords",
+        content:
+          "free gaming cafe POS software, gaming center management software, PC cafe billing software, gaming cafe booking system, Windows POS download, Airavoto Gaming POS setup",
+      },
       { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -165,12 +169,15 @@ function SetupForm() {
           </span>
           <h3 className="mt-5 text-xl font-semibold tracking-tight">You're ready to start!</h3>
           <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">{form.centerName}</span> is all set. Run the app and open it in your browser — your center details will be waiting inside.
+            <span className="font-medium text-foreground">{form.centerName}</span> is all set. Run
+            the app and open it in your browser — your center details will be waiting inside.
           </p>
           <div className="mx-auto mt-6 max-w-xs rounded-xl border border-border bg-[oklch(0.08_0_0)] px-5 py-3.5 font-mono text-sm text-foreground/80">
             npm run start
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">Then open <span className="text-foreground/70">localhost:3000</span></p>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Then open <span className="text-foreground/70">localhost:3000</span>
+          </p>
           <button
             onClick={() => setDone(false)}
             className="mt-5 text-xs text-muted-foreground underline hover:text-foreground"
@@ -188,7 +195,9 @@ function SetupForm() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Gaming Center Name</label>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+                Gaming Center Name
+              </label>
               <input
                 className={field}
                 placeholder="e.g. Arena Pro Gaming"
@@ -198,7 +207,9 @@ function SetupForm() {
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Owner Name</label>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+                Owner Name
+              </label>
               <input
                 className={field}
                 placeholder="e.g. Rahul Sharma"
@@ -220,7 +231,9 @@ function SetupForm() {
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Number of Seats</label>
+              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
+                Number of Seats
+              </label>
               <input
                 className={field}
                 type="number"
@@ -287,8 +300,8 @@ function DownloadPage() {
             Free forever. No hidden charges.
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Download the complete Airavoto Gaming POS — every module unlocked, no trial period,
-            no seat limits.
+            Download the complete Airavoto Gaming POS — every module unlocked, no trial period, no
+            seat limits.
           </p>
         </div>
       </section>
@@ -336,7 +349,10 @@ function DownloadPage() {
                   className="order-2 inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-white/80 bg-white px-4 py-3.5 text-sm font-semibold text-black shadow-sm transition-colors hover:bg-white/90 sm:order-1 sm:px-6"
                   title="Install Airavoto Gaming POS from Microsoft Store on Windows 11"
                 >
-                  <span aria-hidden="true" className="grid size-4 shrink-0 grid-cols-2 grid-rows-2 gap-px">
+                  <span
+                    aria-hidden="true"
+                    className="grid size-4 shrink-0 grid-cols-2 grid-rows-2 gap-px"
+                  >
                     <span className="bg-[#f25022]" />
                     <span className="bg-[#7fba00]" />
                     <span className="bg-[#00a4ef]" />
@@ -356,6 +372,21 @@ function DownloadPage() {
                 >
                   <Download className="size-4 shrink-0" />
                   <span>Install now</span>
+                </a>
+              </div>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <span className="order-1 inline-flex w-fit items-center rounded-full border border-purple-300/30 bg-purple-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-purple-200 sm:order-2">
+                  macOS 12+ · Intel &amp; Apple Silicon
+                </span>
+                <a
+                  href="https://github.com/airavotogaming-arch/image-to-web/releases/tag/v1.0.2"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="order-2 inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-purple-300/40 bg-purple-400/10 px-4 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-purple-200/70 hover:bg-purple-400/20 sm:order-1 sm:px-6"
+                  title="Download Airavoto Gaming POS for Mac from GitHub Releases"
+                >
+                  <Monitor className="size-4 shrink-0" />
+                  <span>Download for Mac</span>
                 </a>
               </div>
             </div>
@@ -392,7 +423,9 @@ function DownloadPage() {
             <div className="flex items-center justify-between gap-4 px-2 pb-1 pt-4">
               <div>
                 <div className="text-sm font-semibold">See how to use Airavoto POS</div>
-                <div className="mt-1 text-xs text-muted-foreground">Watch the quick setup and usage guide</div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  Watch the quick setup and usage guide
+                </div>
               </div>
               <span className="shrink-0 text-xs font-semibold text-foreground/70 transition-colors group-hover:text-foreground">
                 Watch video ↗
@@ -402,13 +435,17 @@ function DownloadPage() {
         </div>
         {/* trust strip */}
         <div className="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground">
-          {["Free lifetime updates", "No subscription", "No hidden charges", "All features unlocked", "Self-hosted"].map(
-            (i) => (
-              <span key={i} className="inline-flex items-center gap-2">
-                <Check className="size-3.5" /> {i}
-              </span>
-            )
-          )}
+          {[
+            "Free lifetime updates",
+            "No subscription",
+            "No hidden charges",
+            "All features unlocked",
+            "Self-hosted",
+          ].map((i) => (
+            <span key={i} className="inline-flex items-center gap-2">
+              <Check className="size-3.5" /> {i}
+            </span>
+          ))}
         </div>
       </Section>
 
