@@ -39,6 +39,9 @@ jobs:
       - name: Build web application
         run: npm run build
 
+      - name: Prepare desktop package metadata
+        run: npm pkg set version=1.0.0 main=desktop/main.cjs description="Airavoto Gaming POS for gaming center management"
+
       - name: Build macOS DMG
         run: npx electron-builder --config electron-builder.yml --mac dmg --${{ matrix.arch }} --publish never
         env:

@@ -1,10 +1,7 @@
 {
   "name": "tanstack_start_ts",
-  "version": "1.0.0",
   "private": true,
   "author": "Ujwal Guru",
-  "description": "Airavoto Gaming POS for gaming center management",
-  "main": "desktop/main.cjs",
   "sideEffects": false,
   "type": "module",
   "scripts": {
