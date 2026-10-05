@@ -2,6 +2,8 @@ appId: com.airavoto.gamingpos
 productName: Airavoto Gaming POS
 copyright: Copyright © 2026 Ujwal Guru
 asar: true
+directories:
+  output: release
 files:
   - desktop/**
   - .output/**
