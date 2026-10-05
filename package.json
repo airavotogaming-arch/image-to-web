@@ -10,9 +10,7 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "desktop:dev": "npm run build && electron desktop/main.cjs",
-    "desktop:dist": "electron-builder --config electron-builder.yml --mac dmg --publish never"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
