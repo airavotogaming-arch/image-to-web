@@ -68,7 +68,7 @@ const categories = [
       },
       {
         q: "What are the system requirements?",
-        a: "Windows 10/11, macOS 12+, or Ubuntu 20.04+, with Node.js v18+, PostgreSQL v14+, 2 GB RAM and 500 MB free disk space. A basic counter PC is more than sufficient.",
+        a: "Windows 10/11 with Node.js v18+, PostgreSQL v14+, 2 GB RAM and 500 MB free disk space. A basic counter PC is more than sufficient.",
       },
       {
         q: "Can I run it on multiple counter terminals?",

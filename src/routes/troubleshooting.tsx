@@ -43,7 +43,7 @@ const setupSteps = [
 ];
 
 const fixes = [
-  ["The Microsoft Store button does not open", "The Store link opens the Microsoft Store app on Windows. If you are on a phone or Mac, open the page on a Windows 10 or Windows 11 computer, or use the standalone Windows installer."],
+  ["The Microsoft Store button does not open", "The Store link opens the Microsoft Store app on Windows. If you are on a phone or another unsupported device, open the page on a Windows 10 or Windows 11 computer, or use the standalone Windows installer."],
   ["Windows shows a security warning", "Download the latest installer from the official Airavoto source. If SmartScreen appears, select More info and verify that the application is Airavoto Gaming POS before continuing."],
   ["The POS does not open after installation", "Restart Windows and try again. Confirm that installation completed and that Windows Defender or another security tool did not quarantine the application. Reinstall the latest release if necessary."],
   ["Other counter computers cannot connect", "Start the POS on the main counter computer and keep every terminal on the same local network. Use the main computer's local IP address and check Windows Firewall if the dashboard is unreachable."],

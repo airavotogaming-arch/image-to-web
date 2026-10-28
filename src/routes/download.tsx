@@ -5,7 +5,6 @@ import {
   Copy,
   Download,
   HardDrive,
-  Monitor,
   Play,
   RefreshCw,
   ShieldCheck,
@@ -71,7 +70,7 @@ const steps = [
 ];
 
 const sysReqs = [
-  { label: "OS", value: "Windows 10/11 · macOS 12+ · Ubuntu 20.04+" },
+  { label: "OS", value: "Windows 10/11" },
   { label: "Node.js", value: "v18 or later" },
   { label: "PostgreSQL", value: "v14 or later" },
   { label: "RAM", value: "2 GB minimum (4 GB recommended)" },
@@ -372,21 +371,6 @@ function DownloadPage() {
                 >
                   <Download className="size-4 shrink-0" />
                   <span>Install now</span>
-                </a>
-              </div>
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-                <span className="order-1 inline-flex w-fit items-center rounded-full border border-purple-300/30 bg-purple-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-purple-200 sm:order-2">
-                  macOS 12+ · Intel &amp; Apple Silicon
-                </span>
-                <a
-                  href="https://github.com/airavotogaming-arch/image-to-web/releases/tag/v1.0.2"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="order-2 inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-purple-300/40 bg-purple-400/10 px-4 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-purple-200/70 hover:bg-purple-400/20 sm:order-1 sm:px-6"
-                  title="Download Airavoto Gaming POS for Mac from GitHub Releases"
-                >
-                  <Monitor className="size-4 shrink-0" />
-                  <span>Download for Mac</span>
                 </a>
               </div>
             </div>
