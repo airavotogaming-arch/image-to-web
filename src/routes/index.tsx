@@ -476,7 +476,7 @@ function Index() {
                   Get it from Microsoft Store
                 </a>
                 <a
-                  href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.1/Airavoto.Gaming.POS_1.0.1_x64-setup.exe"
+                  href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.3/Airavoto.Gaming.POS_1.0.3_x64-setup.exe"
                   className="inline-flex items-center justify-center rounded-full border border-border bg-surface-2 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/30 hover:bg-surface-3"
                 >
                   Download for Windows

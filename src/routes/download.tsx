@@ -366,7 +366,7 @@ function DownloadPage() {
                   Windows 10 &amp; 11
                 </span>
                 <a
-                  href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.3/Airavoto.Gaming.POS_1.0.3_x64-setup.exe"
+                  href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.3/Airavoto.Gaming.POS_1.0.3_x64-setup.exe"
                   className="order-2 inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-foreground/30 hover:bg-surface-3 sm:order-1 sm:px-6"
                   title="Install Airavoto Gaming POS on Windows 10 or Windows 11"
                 >
@@ -543,7 +543,7 @@ function DownloadPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://github.com/airavotogaming-arch/image-to-web/releases/download/v1.0.3/Airavoto.Gaming.POS_1.0.3_x64-setup.exe"
+                href="https://raw.githubusercontent.com/airavotogaming-arch/image-to-web/main/public/downloads/1.0.3/Airavoto.Gaming.POS_1.0.3_x64-setup.exe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
