@@ -5,6 +5,7 @@ import {
   Copy,
   Download,
   HardDrive,
+  Monitor,
   Play,
   RefreshCw,
   ShieldCheck,
@@ -127,7 +128,7 @@ const setupGuide = [
 const troubleshooting = [
   {
     q: "The Microsoft Store button does not open",
-    a: "The Microsoft Store link opens the Store app on Windows. If you are viewing the website on a phone or Mac, use the Windows installer button instead or open the page on a Windows 10 or Windows 11 computer.",
+    a: "The Microsoft Store link opens the Store app on Windows. If you are viewing the website on a phone or another unsupported device, open the page on a Windows 10 or Windows 11 computer, or use the standalone Windows installer.",
   },
   {
     q: "Windows shows a security warning during installation",
