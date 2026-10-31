@@ -463,7 +463,7 @@ function Index() {
               </ul>
               <div className="mt-8 grid gap-2.5">
                 <a
-                  href="ms-windows-store://pdp/?productid=XP89GDBJ919V61"
+                  href="ms-windows-store://pdp/?productid=9N2PZSJ0QR89"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/80 bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-sm transition-colors hover:bg-white/90"
                   title="Get Airavoto Gaming POS from Microsoft Store"
                 >

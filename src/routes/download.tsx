@@ -345,7 +345,7 @@ function DownloadPage() {
                   Best for Windows 11
                 </span>
                 <a
-                  href="ms-windows-store://pdp/?productid=XP89GDBJ919V61"
+                  href="ms-windows-store://pdp/?productid=9N2PZSJ0QR89"
                   className="order-2 inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-white/80 bg-white px-4 py-3.5 text-sm font-semibold text-black shadow-sm transition-colors hover:bg-white/90 sm:order-1 sm:px-6"
                   title="Install Airavoto Gaming POS from Microsoft Store on Windows 11"
                 >
